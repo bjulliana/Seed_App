@@ -15,6 +15,7 @@ Column Classes (Must be used as direct child of row) `column-SIZE-NUMBER`
 ### Helper Classes
 Display None  
 `hidden`  
+
 Text  
 `text-center`  
 `text-left`  
@@ -65,18 +66,18 @@ Set Color
   
 ## Variables  
 Colors  
-    'black': #000000,  
-    'grey-900': #101010,  
-    'grey-700': #3c3c3c,  
-    'grey-500': #7e7e7e,  
-    'grey-300': #dadada,  
-    'off-white': #f5f5f5,  
-    'light-green': #cfe7e1,  
-    'medium-green': #66c4ad,  
-    'white': #ffffff,  
-    'accent-1': #307367,  
-    'accent-2': #7486ae,  
-    'green-overlay': #14483a,  
+    `black`: #000000,  
+    `grey-900`: #101010,  
+    `grey-700`: #3c3c3c,  
+    `grey-500`: #7e7e7e,  
+    `grey-300`: #dadada,  
+    `off-white`: #f5f5f5,  
+    `light-green`: #cfe7e1,  
+    `medium-green`: #66c4ad,  
+    `white`: #ffffff,  
+    `accent-1`: #307367,  
+    `accent-2`: #7486ae,  
+    `green-overlay`: #14483a,  
 
 Typography:  
     `$primary-font`: 'Playfair Display', 'Times New Roman', serif;  
