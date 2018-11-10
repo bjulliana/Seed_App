@@ -11,6 +11,8 @@ Run `gulp watch` to view changes in browser and compile sass
 Row Class `row`    
 Column Classes (Must be used as direct child of row) `column-SIZE-NUMBER`  
   Example: `column-small-12` - To add a container with 12 column on small sizes.  
+Card Container: `card`  
+Card Title Container: `card-title`  
 
 ### Helper Classes
 Display None  
