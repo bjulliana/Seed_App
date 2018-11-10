@@ -54,7 +54,11 @@ Paddings (Top and Bottom)
 `padding-v-lg`  
 `padding-v-xl`  
 
-## Mixins  
+## Mixins & Functions
+Auto Calculate REM Values  
+`rem-calc(NUM_PX)`  
+  Code Example: `font-size: rem-calc(30)`  
+ 
 Media Queries  
 `@include breakpoint (SIZE)`  
   Code Example: `@include breakpoint (large)`  
