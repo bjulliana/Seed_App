@@ -1,0 +1,28 @@
+//Colors
+$colors-map: (
+	'black': #000000,
+	'grey-900': #101010,
+	'grey-700': #3c3c3c,
+	'grey-500': #7e7e7e,
+	'grey-300': #dadada,
+	'off-white': #f5f5f5,
+	'light-green': #cfe7e1,
+	'medium-green': #66c4ad,
+	'white': #ffffff,
+	'accent-1': #307367,
+	'accent-2': #7486ae,
+	'green-overlay': #14483a,
+	'dark-green': #2b655b,
+);
+
+//Fonts
+$primary-font: 'Playfair Display', 'Times New Roman', serif;
+$secondary-font: 'Lato', Arial, sans-serif;
+
+//Paths
+$img-path: '../images';
+
+//Dashboard Sizes
+$sidebar-collapsed: 70px;
+$header-height: 70px;
+$sidebar-full: 280px;

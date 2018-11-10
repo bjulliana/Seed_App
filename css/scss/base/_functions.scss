@@ -1,0 +1,81 @@
+//Convert value to rem
+@function value-to-rem($value, $base: null) {
+    @if type-of($value) == 'number' {
+        $value: ($value / 16) * 1rem;
+    }
+    @if $value == 0rem {
+        $value: 0;
+    }
+
+    @return $value;
+}
+
+//Rem-calc function
+@function rem-calc($values, $base: null) {
+    @if null == $values {
+        @return null;
+    }
+
+    $rem-values: ();
+    $count: length($values);
+    $base: 16;
+
+    @if $count == 1 {
+        @return value-to-rem($values, $base);
+    }
+
+    @for $i from 1 through $count {
+        $rem-values: append($rem-values, value-to-rem(nth($values, $i), $base));
+    }
+
+    @return $rem-values;
+}
+
+//Check if Breakpoint Value is Valid and Create Media Queries Helpers
+@mixin breakpoint($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) and $breakpoint != small {
+        @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    } @else if map-has-key($breakpoints, $breakpoint) and $breakpoint == small {
+        @content;
+    } @else {
+        @error 'No value could be retrieved from `#{$breakpoint}`.';
+    }
+}
+
+//Generate Flex Grid
+@mixin grid-column-classes($columns: 12) {
+    @each $breakpoint in $breakpoints-map {
+        @for $i from 1 through $columns {
+            @include breakpoint($breakpoint) {
+                .column-#{$breakpoint}-#{$i} {
+                    flex: 0 0 auto;
+                    width: percentage($i / $columns);
+                    min-width: 0;
+	                padding: rem-calc(10);
+                }
+            }
+        }
+    }
+}
+
+//Get Spacing Map
+@function get-spacing($size, $viewport-size: 'md') {
+    @if map-has-key($spacing-map, $size) {
+        $spacing: map-get($spacing-map, $size);
+
+        @if map-has-key($spacing, $viewport-size) {
+            @return map-get($spacing, $viewport-size);
+        } @else {
+            @error 'Invalid viewport size "#{$viewport-size}" for spacing size "#{$size}"';
+        }
+    } @else {
+        @error 'Invalid spacing size "#{$size}"';
+    }
+}
+
+//Color Function
+@function set-color($key) {
+    @return map-get($colors-map, $key);
+}

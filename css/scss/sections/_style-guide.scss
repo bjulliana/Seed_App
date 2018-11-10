@@ -1,0 +1,141 @@
+.styleguide {
+    margin: rem-calc(80 0);
+
+    .container {
+        padding: rem-calc(0 150);
+    }
+
+    .sg-section {
+        margin-bottom: rem-calc(50);
+    }
+}
+
+.sg-title {
+    margin-bottom: rem-calc(40);
+    border-bottom: 1px solid set-color('grey-700');
+    padding-bottom: rem-calc(20);
+    text-transform: uppercase;
+    font-size: rem-calc(36);
+}
+
+.sg-table {
+    margin: 0 auto;
+    width: 900px;
+    line-height: 3rem;
+
+    thead {
+        text-align: left;
+        text-transform: uppercase;
+        font-family: $primary-font;
+    }
+
+    td {
+        border-bottom: 1px solid set-color('grey-300');
+    }
+
+    .font-info {
+
+        &.primary td {
+            font-family: $primary-font !important;
+        }
+
+        &.secondary td {
+            font-family: $secondary-font !important;
+        }
+    }
+}
+
+.sg-bg-dark {
+    background-color: set-color('grey-900');
+    padding: rem-calc(30);
+}
+
+
+// Color Function
+@function color($color, $palette: $colors-map) {
+    // Parse arguments
+    $color: map-get($palette, $color) or $color;
+    $base: nth($color, 1);
+    $adjust: if(length($color) > 1, nth($color, 2), ());
+
+    // Recursive check
+    $color: if(map-has-key($palette, $base), color($base), $base);
+
+    @return $color;
+}
+
+.colors-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.color-info {
+    display: inline-block;
+
+    p {
+        margin: 0;
+        text-align: center;
+        text-transform: uppercase;
+        line-height: rem-calc(24);
+        color: set-color('grey-700');
+        font-family: $secondary-font;
+    }
+
+    .name {
+        color: set-color('grey-900');
+        font-weight: 700;
+    }
+
+    .scss {
+        text-transform: none;
+    }
+}
+
+.color-info {
+    display: none;
+    font-family: sans-serif;
+}
+
+@each $name, $value in $colors-map {
+    $color: color($value);
+    $i: index(map-keys($colors-map), $name);
+
+    .color-info:nth-child(#{$i}) {
+        display: inline-block;
+        margin-bottom: rem-calc(50);
+        padding-right: rem-calc(15);
+
+        .color {
+            display: inline-block;
+            margin-bottom: rem-calc(16);
+            background: $color;
+            padding: rem-calc(24);
+            width: rem-calc(200);
+            height: rem-calc(60);
+            text-align: center;
+
+            @if lightness($color) > 90% {
+                border: rem-calc(1) solid set-color(grey-300);
+            }
+
+        }
+
+        .name::after {
+            content: $name;
+        }
+
+        .hex::after {
+            content: '#{color($name)}';
+        }
+
+        .scss::after {
+            content: '$''#{($name)}';
+        }
+
+        .rgb::after {
+            text-transform: none;
+            content: '#{'rgb(#{red($color)}, #{green($color)}, #{blue($color)})'}';
+        }
+    }
+}

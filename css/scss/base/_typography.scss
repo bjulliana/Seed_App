@@ -1,0 +1,161 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    margin-top: rem-calc(5);
+    margin-bottom: rem-calc(32);
+    text-rendering: optimizeLegibility;
+    color: set-color('grey-700');
+    font-family: $primary-font;
+    font-weight: 500;
+    font-style: normal;
+}
+
+h1,
+.h1 {
+    text-transform: uppercase;
+    font-size: rem-calc(30);
+    font-weight: 700;
+}
+
+@include breakpoint(medium) {
+    h1,
+    .h1 {
+        line-height: 1.35;
+        font-size: rem-calc(44);
+    }
+}
+
+h2,
+.h2 {
+    text-transform: uppercase;
+    line-height: 1.25;
+    font-size: rem-calc(28);
+    font-weight: 700;
+
+    @include breakpoint(large) {
+        font-size: rem-calc(40);
+    }
+
+    span {
+        font-weight: 300;
+    }
+}
+
+h3,
+.h3 {
+    margin-bottom: rem-calc(18);
+    text-transform: uppercase;
+    line-height: 1.5;
+    font-size: rem-calc(35);
+}
+
+h4,
+.h4 {
+    margin-bottom: rem-calc(18);
+    text-transform: uppercase;
+    line-height: 1.76;
+    font-size: rem-calc(30);
+}
+
+h5,
+.h5 {
+    margin-bottom: rem-calc(12);
+    text-transform: uppercase;
+    line-height: 1.7;
+    font-size: rem-calc(22);
+
+    @include breakpoint(large) {
+        font-size: rem-calc(25);
+    }
+}
+
+h6,
+.h6 {
+    margin-bottom: rem-calc(12);
+    text-transform: uppercase;
+    line-height: 1.85;
+    font-size: rem-calc(20);
+}
+
+p img {
+    margin: 0;
+}
+
+p {
+    font-family: $secondary-font;
+    font-size: rem-calc(14);
+    font-weight: 300;
+
+    @include breakpoint(medium) {
+        font-size: rem-calc(16);
+    }
+}
+
+p.lead {
+    margin-bottom: rem-calc(36);
+    line-height: 1.8;
+    color: set-color('grey-500');
+    font-family: $primary-font;
+    font-size: rem-calc(16);
+}
+
+@include breakpoint(medium) {
+    p.lead {
+        font-size: rem-calc(20);
+    }
+}
+
+em,
+i {
+    font-style: italic;
+}
+
+strong,
+b {
+    font-weight: bold;
+}
+
+i {
+    font-style: italic;
+}
+
+em {
+    color: set-color('accent-1');
+    font-weight: bold;
+    font-style: normal;
+}
+
+strong,
+b {
+    font-weight: 700;
+}
+
+small {
+    line-height: inherit;
+    font-size: rem-calc(11);
+}
+
+a {
+    text-decoration: none;
+    line-height: inherit;
+    color: inherit;
+    font-weight: 900;
+}
+
+.sub-heading {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: set-color('accent-2');
+    font-family: $secondary-font;
+    font-weight: 500;
+}

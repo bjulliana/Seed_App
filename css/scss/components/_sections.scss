@@ -1,0 +1,40 @@
+.image-container {
+    z-index: 1;
+}
+
+.line {
+    display: block;
+    margin-bottom: rem-calc(40);
+    background-color: set-color('accent-1');
+    width: 100px;
+    height: 3px;
+
+    &-center {
+        display: block;
+        margin: rem-calc(0 auto 40 auto);
+        background: set-color('accent-1');
+        width: 100px;
+        height: 3px;
+    }
+}
+
+.image-wrapper {
+    img {
+        width: 100%;
+        max-width: 300px;
+
+        @include breakpoint(large) {
+            max-width: 100%;
+        }
+    }
+
+    &.phone {
+        @include breakpoint(large) {
+            max-width: 300px;
+        }
+
+        @include breakpoint(xlarge) {
+            max-width: 100%;
+        }
+    }
+}

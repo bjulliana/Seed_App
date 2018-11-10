@@ -1,0 +1,32 @@
+.main-wrapper {
+	width: 100%;
+	overflow: hidden;
+}
+
+.page-wrapper {
+	display: block;
+	background: set-color('off-white');
+	position: relative;
+	height: 100vh;
+
+	@include breakpoint('medium') {
+		margin-left: $sidebar-collapsed;
+	}
+
+	@include breakpoint(xxlarge) {
+		margin-left: $sidebar-full;
+	}
+
+	.sidebar-open & {
+		width: 100%;
+		margin-left: 0;
+
+		@include breakpoint(large) {
+			margin-left: $sidebar-full;;
+		}
+	}
+
+	.dashboard-main {
+		padding: calc(20px + #{$header-height}) 0 rem-calc(40) 0;
+	}
+}

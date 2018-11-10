@@ -1,0 +1,84 @@
+button,
+.button,
+a.button,
+input[type='submit'],
+input[type='button'] {
+    display: inline-block;
+    transition: 0.3s ease-in-out;
+    margin: rem-calc(0 3 12 0);
+    border: 3px solid set-color('accent-1');
+    border-radius: 5px;
+    background: set-color('accent-1');
+    cursor: pointer;
+    padding: rem-calc(0 18);
+    height: rem-calc(54);
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: rem-calc(48);
+    letter-spacing: rem-calc(3);
+    white-space: nowrap;
+    color: set-color('white');
+    font-family: $secondary-font;
+    font-size: rem-calc(14);
+    font-weight: 700;
+
+    @include breakpoint(large) {
+        padding: rem-calc(0 30);
+    }
+
+    &:hover,
+    &:focus {
+        border: 3px solid set-color('accent-1');
+        background: transparent;
+        color: set-color('accent-1');
+    }
+
+    &.button-alt {
+        border: 3px solid set-color('white');
+        background: set-color('white');
+        line-height: rem-calc(48);
+        color: set-color('accent-1');
+
+        &:hover,
+        &:focus {
+            border: 3px solid set-color('white');
+            background-color: transparent;
+            color: set-color('white');
+        }
+    }
+
+    &.stroke-white {
+        border: 3px solid set-color('white');
+        background: transparent;
+        line-height: rem-calc(48);
+        color: set-color('white');
+
+        &:hover,
+        &:focus {
+            border-color: set-color('accent-1');
+            background-color: set-color('accent-1');
+        }
+    }
+
+    &.stroke-green {
+        border: 3px solid set-color('accent-1');
+        background: transparent;
+        line-height: rem-calc(48);
+        color: set-color('accent-1');
+
+        &:hover,
+        &:focus {
+            border-color: set-color('white');
+            background-color: set-color('white');
+        }
+    }
+
+    &.button-large {
+        display: block;
+        margin-top: rem-calc(48);
+        width: 100%;
+        line-height: rem-calc(50);
+        font-size: rem-calc(16);
+    }
+}

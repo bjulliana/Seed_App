@@ -1,0 +1,128 @@
+$breakpoints: (
+    small: 0,
+    medium: 600px,
+    large: 900px,
+    xlarge: 1200px,
+    xxlarge: 1600px
+);
+
+$breakpoints-map: map-keys($breakpoints);
+
+//Create Helper Classes for Media Queries
+@each $breakpoint, $values in $breakpoints {
+    .show-for-#{$breakpoint} {
+
+        @if $breakpoint == 'small' {
+            display: block;
+
+            @include breakpoint('medium') {
+                display: none;
+            }
+
+        } @else {
+            display: none;
+
+            @include breakpoint($breakpoint) {
+                display: block;
+            }
+        }
+    }
+}
+
+//Spacing Map
+$spacing-map: (
+    'xxs': (
+        'sm': rem-calc(10),
+        'md': rem-calc(15)
+    ),
+    'xs': (
+        'sm': rem-calc(20),
+        'md': rem-calc(20)
+    ),
+    'sm': (
+        'sm': rem-calc(20),
+        'md': rem-calc(30)
+    ),
+    'md': (
+        'sm': rem-calc(30),
+        'md': rem-calc(80)
+    ),
+    'lg': (
+        'sm': rem-calc(40),
+        'md': rem-calc(80)
+    ),
+    'xl': (
+        'sm': rem-calc(60),
+        'md': rem-calc(100)
+    )
+);
+
+//Generate Padding and Margin Class Helpers
+@each $size-label, $size-values in $spacing-map {
+    .padding-v-#{$size-label} {
+        padding-top: get-spacing($size-label, 'sm');
+        padding-bottom: get-spacing($size-label, 'sm');
+
+        @include breakpoint('large') {
+            padding-top: get-spacing($size-label, 'md');
+            padding-bottom: get-spacing($size-label, 'md');
+        }
+    }
+
+    .margin-b-#{$size-label} {
+        margin-bottom: get-spacing($size-label, 'sm');
+
+        @include breakpoint('large') {
+            margin-bottom: get-spacing($size-label, 'md');
+        }
+    }
+}
+
+@include grid-column-classes;
+
+.row {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: rem-calc(0 30);
+    width: 100%;
+    max-width: rem-calc(1400);
+}
+
+.hide-for-small.hide-for-small {
+    display: none;
+
+    @include breakpoint(medium) {
+        display: flex;
+    }
+}
+
+.hide-for-large {
+    display: block;
+
+    @include breakpoint(large) {
+        display: none;
+    }
+}
+
+.hide-for-xlarge {
+    display: block;
+
+    @include breakpoint(xlarge) {
+        display: none;
+    }
+}
+
+.hide-for-xxlarge {
+	display: block;
+
+	@include breakpoint(xxlarge) {
+		display: none;
+	}
+}
+
+div[class*='column-'] > .row {
+    padding: rem-calc(0 30);
+}

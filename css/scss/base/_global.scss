@@ -1,0 +1,100 @@
+@import 'variables.scss';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+    line-height: rem-calc(30);
+    color: set-color('grey-700');
+    font-family: $secondary-font;
+    font-size: rem-calc(16);
+    font-weight: 200;
+    -webkit-font-smoothing: antialiased;
+}
+
+footer,
+main,
+menu,
+nav,
+section {
+    display: block;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.align-center {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+.no-padding-bottom {
+    padding-bottom: 0;
+}
+
+.flex-a-center {
+    align-items: center;
+}
+
+.flex-j-center {
+    justify-content: center;
+}
+
+.bg-white {
+    background-color: set-color('white') !important;
+}
+
+.bg-alt {
+    background-color: set-color('off-white');
+}
+
+hr {
+    margin-bottom: rem-calc(50);
+    border-width: 1px 0 0;
+    border-color: rgba(set-color('white'), 0.2);
+    width: rem-calc(200);
+    color: set-color('grey-500');
+}

@@ -1,0 +1,30 @@
+{
+	"name": "seed_app",
+	"version": "1.0.0",
+	"description": "Plant Monitoring System App",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bjulliana/Seed_App.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/bjulliana/Seed_App/issues"
+	},
+	"homepage": "https://github.com/bjulliana/Seed_App#readme",
+	"devDependencies": {
+		"browser-sync": "^2.26.3",
+		"gulp": "^3.9.1",
+		"gulp-autoprefixer": "^6.0.0",
+		"gulp-sass": "^4.0.2",
+		"gulp-sass-lint": "^1.4.0",
+		"node-sass": "^4.10.0"
+	},
+	"dependencies": {
+		"npm": "^6.4.1"
+	}
+}
