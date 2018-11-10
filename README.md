@@ -81,8 +81,8 @@ Colors
     `white`: #ffffff,  
     `accent-1`: #307367,  
     `accent-2`: #7486ae,  
-    `green-overlay`: #14483a, 
-    `dark-green`: #2b655b,
+    `green-overlay`: #14483a,   
+    `dark-green`: #2b655b,  
 
 Typography:  
     `$primary-font`: 'Playfair Display', 'Times New Roman', serif;  
