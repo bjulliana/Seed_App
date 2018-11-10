@@ -88,7 +88,7 @@ Typography:
     `$primary-font`: 'Playfair Display', 'Times New Roman', serif;  
     `$secondary-font`: 'Lato', Arial, sans-serif;  
 
-Usage of Images Paths on CSS  
+Usage of Images Paths on SCSS Files  
   `$img-path`  
   Code Example: `background-image: url('#{$img-path}/cover.jpg')`  
   
