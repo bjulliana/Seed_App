@@ -7,7 +7,8 @@
 	display: block;
 	background: set-color('off-white');
 	position: relative;
-	height: 100vh;
+	height: 100%;
+	min-height: 100vh;
 
 	@include breakpoint('medium') {
 		margin-left: $sidebar-collapsed;
@@ -28,5 +29,15 @@
 
 	.dashboard-main {
 		padding: calc(20px + #{$header-height}) 0 rem-calc(40) 0;
+	}
+}
+
+.sidebar-open {
+	.dashboard-main {
+		width: 100%;
+
+		@include breakpoint(large) {
+			width: calc(100% - #{$sidebar-full});
+		}
 	}
 }
