@@ -94,21 +94,35 @@
 		<main class="dashboard-main">
 			<div class="row">
 				<div class="column-small-12">
-					<h4 class="page-title">Sample Page</h4>
+					<div class="card"></div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="column-small-12 column-large-6">
+				<div class="column-small-12 column-medium-6 column-large-4">
 					<div class="card">
-						<div class="card-title">Card Title</div>
-						This is a card block - column-small-12 column-large-6.
+						<div class="card-title">Temperature</div>
+						<canvas id="temperatureChart"></canvas>
 					</div>
 				</div>
-				<div class="column-small-12 column-large-6">
+				<div class="column-small-12 column-medium-6 column-large-4">
 					<div class="card">
-						<div class="card-title">Card Title</div>
-						This is a card block - column-small-12 column-large-6.
+							<div class="card-title">Humidity</div>
+						<canvas id="moistureChart"></canvas>
 					</div>
+				</div>
+				<div class="column-small-12 column-medium-6 column-large-4">
+					<div class="card">
+						<div class="card-title">Light</div>
+						<canvas id="lightChart"></canvas>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column-small-12 column-large-8">
+					<div class="card"></div>
+				</div>
+				<div class="column-small-12 column-large-4">
+					<div class="card"></div>
 				</div>
 			</div>
 		</main>
@@ -116,6 +130,8 @@
 </div>
 
 <script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
 
 </body>
 </html>
