@@ -25,24 +25,52 @@ var valueDiv = document.querySelector('#plantValue');
 board.on('ready', function () {
 	var moistureSensor = new five.Sensor({
 		pin      : 'A1',
-		freq     : 250, //Emit Data Every 250ms.
+		freq     : 250,
 		threshold: 2
 	});
 
 	tempChart(30);
-	lightChart(90);
+
+	var tempSensor = new five.Thermometer({
+		controller: 'LM35',
+		pin       : 'A3',
+		freq      : 250
+	});
+
+	var photoSensor = new five.Sensor({
+		pin      : 'A5',
+		freq     : 250,
+		threshold: 50
+	});
+
+	board.repl.inject({
+		pot: photoSensor
+	});
 
 	moistureSensor.on('change', function () {
 		var sensorInfo = this.value;
 		moistureChart(sensorInfo);
 	});
+
+	tempSensor.on('change', function () {
+		console.log((this.celsius - 10) + '°C', this.fahrenheit + '°F');
+	});
+
+	photoSensor.on('change', function () {
+		console.log('Lux: ' + this.scaleTo(0, 100));
+		var lux = this.scaleTo(0, 100);
+		lightChart(lux);
+	});
+
 });
 
 function moistureChart(moisture) {
 	if (moistureChrt) {
 		moistureChrt.destroy();
 	}
-	var roundMoisture = getMoisture(moisture);
+
+	console.log(moisture);
+	var roundMoisture = createRemap(moisture);
 
 	var canvas = document.getElementById('moistureChart');
 	var ctx    = canvas.getContext('2d');
@@ -77,11 +105,10 @@ function moistureChart(moisture) {
 			showTooltips    : false,
 			animation       : {
 				onComplete: function () {
-					var width    = ctx.canvas.clientWidth;
-					var height   = ctx.canvas.clientHeight;
-					var fontSize = ctx.canvas.clientWidth / 8 + 'px';
-					var color    = '#3c3c3c';
-					console.log(width);
+					var width     = ctx.canvas.clientWidth;
+					var height    = ctx.canvas.clientHeight;
+					var fontSize  = ctx.canvas.clientWidth / 8 + 'px';
+					var color     = '#3c3c3c';
 					ctx.font      = 'bold ' + fontSize + ' Lato';
 					ctx.fillStyle = color;
 					ctx.fillText(roundMoisture + '%', width / 2.6, height / 1.2);
@@ -94,6 +121,15 @@ function moistureChart(moisture) {
 
 function getMoisture(moisture) {
 	return Math.round(moisture / 1023 * 100);
+}
+
+function createRemap(moisture) {
+	var inMin  = 1023,
+	    inMax  = 400,
+	    outMin = 0,
+	    outMax = 100;
+
+	return Math.round((moisture - inMin) * (outMax - outMin) / (inMax - inMin) + outMin);
 }
 
 function tempChart(temp) {
@@ -131,11 +167,10 @@ function tempChart(temp) {
 			showTooltips    : false,
 			animation       : {
 				onComplete: function () {
-					var width    = ctx.canvas.clientWidth;
-					var height   = ctx.canvas.clientHeight;
-					var fontSize = ctx.canvas.clientWidth / 8 + 'px';
-					var color    = '#3c3c3c';
-					console.log(width);
+					var width     = ctx.canvas.clientWidth;
+					var height    = ctx.canvas.clientHeight;
+					var fontSize  = ctx.canvas.clientWidth / 8 + 'px';
+					var color     = '#3c3c3c';
 					ctx.font      = 'bold ' + fontSize + ' Lato';
 					ctx.fillStyle = color;
 					ctx.fillText(temp + '%', width / 2.6, height / 1.2);
@@ -181,11 +216,10 @@ function lightChart(light) {
 			showTooltips    : false,
 			animation       : {
 				onComplete: function () {
-					var width    = ctx.canvas.clientWidth;
-					var height   = ctx.canvas.clientHeight;
-					var fontSize = ctx.canvas.clientWidth / 8 + 'px';
-					var color    = '#3c3c3c';
-					console.log(width);
+					var width     = ctx.canvas.clientWidth;
+					var height    = ctx.canvas.clientHeight;
+					var fontSize  = ctx.canvas.clientWidth / 8 + 'px';
+					var color     = '#3c3c3c';
 					ctx.font      = 'bold ' + fontSize + ' Lato';
 					ctx.fillStyle = color;
 					ctx.fillText(light + '%', width / 2.6, height / 1.2);
