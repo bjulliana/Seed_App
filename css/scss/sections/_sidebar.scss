@@ -62,7 +62,6 @@ $border-color: #e6ecf5;
 				list-style: none;
 				margin: 0;
 				overflow: auto;
-				position: relative;
 				overflow-x: hidden;
 				padding: rem-calc(30 0);
 
@@ -72,6 +71,7 @@ $border-color: #e6ecf5;
 					justify-content: flex-start;
 					color: set-color('white');
 					padding: rem-calc(20);
+					position: relative;
 
 					.nav-icon {
 						font-size: rem-calc(30);
@@ -87,6 +87,7 @@ $border-color: #e6ecf5;
 							display: block;
 							height: 70px;
 							left: 0;
+							top: 0;
 							position: absolute;
 							width: 5px;
 						}
