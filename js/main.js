@@ -29,7 +29,6 @@ board.on('ready', function () {
 		threshold: 2
 	});
 
-	tempChart(30);
 
 	var tempSensor = new five.Thermometer({
 		controller: 'LM35',
@@ -63,6 +62,12 @@ board.on('ready', function () {
 	});
 
 });
+
+if (board.isConnected === false) {
+	moistureChart(670);
+	lightChart(67);
+	tempChart(25);
+}
 
 function moistureChart(moisture) {
 	if (moistureChrt) {
@@ -119,10 +124,6 @@ function moistureChart(moisture) {
 	});
 }
 
-function getMoisture(moisture) {
-	return Math.round(moisture / 1023 * 100);
-}
-
 function createRemap(moisture) {
 	var inMin  = 1023,
 	    inMax  = 400,
@@ -130,55 +131,6 @@ function createRemap(moisture) {
 	    outMax = 100;
 
 	return Math.round((moisture - inMin) * (outMax - outMin) / (inMax - inMin) + outMin);
-}
-
-function tempChart(temp) {
-	var temp   = temp;
-	var canvas = document.getElementById('temperatureChart');
-	var ctx    = canvas.getContext('2d');
-
-	var tempChart = new Chart(ctx, {
-		type   : 'doughnut',
-		data   : {
-			datasets: [
-				{
-					label               : 'Temperature',
-					data                : [temp, 100 - temp],
-					backgroundColor     : [
-						'#FF8373',
-						'#dadada'
-					],
-					hoverBackgroundColor: [
-						'#FF8373',
-						'#dadada'
-					],
-					borderWidth         : 0
-				}
-			]
-		},
-		options: {
-			events          : [],
-			tooltips        : {
-				enabled: false
-			},
-			rotation        : 1 * Math.PI,
-			circumference   : 1 * Math.PI,
-			cutoutPercentage: 65,
-			showTooltips    : false,
-			animation       : {
-				onComplete: function () {
-					var width     = ctx.canvas.clientWidth;
-					var height    = ctx.canvas.clientHeight;
-					var fontSize  = ctx.canvas.clientWidth / 8 + 'px';
-					var color     = '#3c3c3c';
-					ctx.font      = 'bold ' + fontSize + ' Lato';
-					ctx.fillStyle = color;
-					ctx.fillText(temp + '%', width / 2.6, height / 1.2);
-
-				}
-			}
-		}
-	});
 }
 
 function lightChart(light) {
@@ -223,6 +175,56 @@ function lightChart(light) {
 					ctx.font      = 'bold ' + fontSize + ' Lato';
 					ctx.fillStyle = color;
 					ctx.fillText(light + '%', width / 2.6, height / 1.2);
+
+				}
+			}
+		}
+	});
+}
+
+function tempChart(temp) {
+	var temp   = temp;
+	var canvas = document.getElementById('temperatureChart');
+	var ctx    = canvas.getContext('2d');
+
+	var tempChart = new Chart(ctx, {
+		type   : 'doughnut',
+		data   : {
+			datasets: [
+				{
+					label               : 'Temperature',
+					data                : [temp, 100 - temp],
+					backgroundColor     : [
+						'#FF8373',
+						'#dadada'
+					],
+					hoverBackgroundColor: [
+						'#FF8373',
+						'#dadada'
+					],
+					borderWidth         : 0
+				}
+			]
+		},
+		options: {
+			responsive: true,
+			events          : [],
+			tooltips        : {
+				enabled: false
+			},
+			rotation        : 1 * Math.PI,
+			circumference   : 1 * Math.PI,
+			cutoutPercentage: 65,
+			showTooltips    : false,
+			animation       : {
+				onComplete: function () {
+					var width     = ctx.canvas.clientWidth;
+					var height    = ctx.canvas.clientHeight;
+					var fontSize  = ctx.canvas.clientWidth / 8 + 'px';
+					var color     = '#3c3c3c';
+					ctx.font      = 'bold ' + fontSize + ' Lato';
+					ctx.fillStyle = color;
+					ctx.fillText(temp + '%', width / 2.6, height / 1.2);
 
 				}
 			}

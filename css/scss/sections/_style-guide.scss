@@ -50,7 +50,6 @@
     padding: rem-calc(30);
 }
 
-
 // Color Function
 @function color($color, $palette: $colors-map) {
     // Parse arguments
@@ -60,7 +59,6 @@
 
     // Recursive check
     $color: if(map-has-key($palette, $base), color($base), $base);
-
     @return $color;
 }
 

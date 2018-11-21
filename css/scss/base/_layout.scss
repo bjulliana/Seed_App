@@ -86,9 +86,13 @@ $spacing-map: (
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 auto;
-    padding: rem-calc(0 30);
+    padding: rem-calc(0 15);
     width: 100%;
     max-width: rem-calc(1400);
+
+    @include breakpoint(large) {
+        padding: rem-calc(0 30);
+    }
 }
 
 .hide-for-small.hide-for-small {
@@ -100,7 +104,7 @@ $spacing-map: (
 }
 
 .hide-for-large {
-    display: block;
+    display: inline-block;
 
     @include breakpoint(large) {
         display: none;
@@ -108,7 +112,7 @@ $spacing-map: (
 }
 
 .hide-for-xlarge {
-    display: block;
+    display: inline-block;
 
     @include breakpoint(xlarge) {
         display: none;
@@ -116,13 +120,17 @@ $spacing-map: (
 }
 
 .hide-for-xxlarge {
-	display: block;
+    display: block;
 
-	@include breakpoint(xxlarge) {
-		display: none;
-	}
+    @include breakpoint(xxlarge) {
+        display: none;
+    }
 }
 
 div[class*='column-'] > .row {
-    padding: rem-calc(0 30);
+    padding: rem-calc(0 15);
+
+    @include breakpoint(large) {
+        padding: rem-calc(0 30);
+    }
 }

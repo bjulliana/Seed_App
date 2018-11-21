@@ -1,0 +1,67 @@
+.weather-card {
+
+    .weather-front {
+
+        .row {
+            align-items: center;
+        }
+
+        .current-weather {
+            font-size: rem-calc(60);
+            text-align: center;
+        }
+
+        .weather-info {
+            p {
+                margin: 0;
+            }
+
+            .date {
+                font-weight: 400;
+            }
+
+            .temp {
+                font-size: rem-calc(40);
+                font-weight: 400;
+                margin-top: rem-calc(10);
+
+                span {
+                    font-size: rem-calc(14);
+                    font-weight: 300;
+                    margin: rem-calc(0 5);
+                }
+            }
+
+            .status {
+                text-transform: uppercase;
+                font-size: rem-calc(20);
+            }
+
+            .location {
+                font-size: rem-calc(12);
+            }
+        }
+    }
+
+    .weather-back {
+        display: none;
+        text-align: center;
+        
+        @include breakpoint(medium) {
+            display: block;
+        }
+
+        .weather-hist {
+            .day,
+            .date,
+            .temp {
+                font-size: rem-calc(14);
+                white-space: nowrap;
+            }
+
+            .weather-icon {
+                font-size: rem-calc(24);
+            }
+        }
+    }
+}

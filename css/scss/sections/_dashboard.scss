@@ -1,43 +1,43 @@
 .main-wrapper {
-	width: 100%;
-	overflow: hidden;
+    width: 100%;
+    overflow: hidden;
 }
 
 .page-wrapper {
-	display: block;
-	background: set-color('off-white');
-	position: relative;
-	height: 100%;
-	min-height: 100vh;
+    display: block;
+    background: set-color('off-white');
+    position: relative;
+    height: 100%;
+    min-height: 100vh;
 
-	@include breakpoint('medium') {
-		margin-left: $sidebar-collapsed;
-	}
+    @include breakpoint('medium') {
+        margin-left: $sidebar-collapsed;
+    }
 
-	@include breakpoint(xxlarge) {
-		margin-left: $sidebar-full;
-	}
+    @include breakpoint(xxlarge) {
+        margin-left: $sidebar-full;
+    }
 
-	.sidebar-open & {
-		width: 100%;
-		margin-left: 0;
+    .sidebar-open & {
+        width: 100%;
+        margin-left: 0;
 
-		@include breakpoint(large) {
-			margin-left: $sidebar-full;;
-		}
-	}
+        @include breakpoint(large) {
+            margin-left: $sidebar-full;;
+        }
+    }
 
-	.dashboard-main {
-		padding: calc(20px + #{$header-height}) 0 rem-calc(40) 0;
-	}
+    .dashboard-main {
+        padding: calc(20px + #{$header-height}) 0 rem-calc(40) 0;
+    }
 }
 
 .sidebar-open {
-	.dashboard-main {
-		width: 100%;
+    .dashboard-main {
+        width: 100%;
 
-		@include breakpoint(large) {
-			width: calc(100% - #{$sidebar-full});
-		}
-	}
+        @include breakpoint(large) {
+            width: calc(100% - #{$sidebar-full});
+        }
+    }
 }
