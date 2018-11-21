@@ -94,7 +94,35 @@
 		<main class="dashboard-main">
 			<div class="row">
 				<div class="column-small-12">
-					<div class="card"></div>
+					<div class="card no-padding plant-detail-header">
+						<div class="row no-padding">
+							<div class="column-small-4 column-large-3 column-xlarge-2 no-padding detail-image-wrapper">
+								<div class="plant-image-header" style="background-image: url('images/plants/plant_sample.jpg')">
+								</div>
+							</div>
+							<div class="column-small-8 column-large-9 column-xlarge-8">
+								<div class="row plant-info-wrapper">
+									<div class="column-small-12 column-large-5">
+										<div><h1 class="h3 plant-name">Planty</h1><a href="#" class="hide-for-xlarge"><span class="lnr lnr-pencil"></span></a></div>
+										<p class="update-info">Updated at 10/31/2018 at 14:58</p>
+									</div>
+									<div class="column-small-6 column-large-4">
+										<ul class="plant-info">
+											<li><span class="lnr lnr-book"></span>Plant Type</li>
+											<li><span class="lnr lnr-history"></span>67 Days</li>
+										</ul>
+									</div>
+									<div class="column-small-6 column-large-3">
+										<p class="health-title">Overall Health</p>
+										<p class="health-info health-good">Good</p>
+									</div>
+								</div>
+							</div>
+							<div class="column-large-2 edit-wrapper">
+								<a class="button">Edit</a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="row">
@@ -106,7 +134,7 @@
 				</div>
 				<div class="column-small-12 column-medium-6 column-large-4">
 					<div class="card">
-							<div class="card-title">Humidity</div>
+						<div class="card-title">Humidity</div>
 						<canvas id="moistureChart"></canvas>
 					</div>
 				</div>
@@ -119,7 +147,10 @@
 			</div>
 			<div class="row">
 				<div class="column-small-12 column-large-8">
-					<div class="card"></div>
+					<div class="card">
+						<div class="card-title">History</div>
+						<canvas id="historyChart"></canvas>
+					</div>
 				</div>
 				<div class="column-small-12 column-large-4">
 					<div class="card"></div>
@@ -128,6 +159,8 @@
 		</main>
 	</div>
 </div>
+
+<script type="text/javascript" src="js/charts.js"></script>
 
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
