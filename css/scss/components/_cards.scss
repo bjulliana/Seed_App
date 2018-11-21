@@ -1,20 +1,25 @@
 
 .card {
-    display: flex;
-    position: relative;
-    flex-direction: column;
+    display: block;
     min-width: 0;
     word-wrap: break-word;
     background-color: set-color('white');
-    background-clip: border-box;
     border: 0px solid transparent;
     border-radius: 3px;
-    padding: 1.25rem
-}
+    padding: rem-calc(10);
 
-.card-title {
-    margin-bottom: 0.75rem;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 700;
+    @include breakpoint(xlarge) {
+        padding: rem-calc(20);
+    }
+
+    .row.row {
+        padding: 0;
+    }
+
+    .card-title {
+        margin-bottom: 0.75rem;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
 }

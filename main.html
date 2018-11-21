@@ -8,163 +8,217 @@
 
 <link href="css/main.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
 
 </head>
 <body class="app">
 <div>
-	<div class="sidebar">
-		<div class="sidebar-inner">
-			<div class="sidebar-logo">
-				<div class="sidebar-full">
-					<div class="logo">
-						<a href="#"><img src="images/Logo-Horizontal-White.svg" alt=""></a>
-						<span class="sidebar-toggle"><a href="#"><span class="lnr lnr-chevron-left-circle"></span></a></span>
-					</div>
-				</div>
-				<div class="sidebar-collapsed">
-					<div class="logo">
-						<a href="#"><img src="images/Symbol-White.svg" alt=""></a>
-					</div>
-				</div>
-			</div>
-			<ul class="sidebar-menu scrollable">
-				<li class="nav-item">
-					<a class="sidebar-link active" href="index.html">
-						<span class="lnr lnr-star nav-icon"></span>
-						<span class="title">Dashboard</span>
-					</a>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="sidebar-link dropdown-toggle">
-						<span class="lnr lnr-star nav-icon"></span>
-						<span class="title">My Plants</span>
-						<span class="arrow-right"><span class="lnr lnr-chevron-right"></span></span>
-						<span class="arrow-down"><span class="lnr lnr-chevron-down"></span></span>
-					</a>
-					<ul class="dropdown-menu">
-						<li><a class="sidebar-link" href="#">Plant 1</a></li>
-						<li><a class="sidebar-link" href="#">Plant 2</a></li>
-					</ul>
-				</li>
-				<li class="nav-item">
-					<a class="sidebar-link" href="#">
-						<span class="lnr lnr-star nav-icon"></span>
-						<span class="title">Plant Library</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="sidebar-link" href="#">
-						<span class="lnr lnr-star nav-icon"></span>
-						<span class="title">Settings</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="sidebar-link" href="#">
-						<span class="lnr lnr-star nav-icon"></span>
-						<span class="title">Help</span>
-					</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div class="page-wrapper">
-		<div class="header navbar">
-			<div class="header-container">
-				<ul class="nav-left">
-					<li class="sidebar-toggle hide-for-xxlarge"><a href="#"><span class="lnr lnr-menu"></span></a></li>
-					<li class="search-icon show-for-medium"><a><span class="lnr lnr-magnifier"></span></a></li>
-					<li class="search-input show-for-medium"><input class="form-control" type="text" placeholder="Search..."></li>
-				</ul>
-				<img class="mobile-logo show-for-small" src="images/Symbol.svg" alt="">
-				<ul class="nav-right">
-					<li class="dropdown-usr">
-						<a href="#" class="dropdown-user dropdown-toggle-usr">
-							<span class="lnr lnr-chevron-down show-for-medium"></span>
-							<span class="user-name show-for-medium">John Doe</span>
-							<img src="https://randomuser.me/api/portraits/men/10.jpg" alt="">
-						</a>
-						<ul class="dropdown-menu">
-							<li><a href="#" class=""><span class="lnr lnr-user nav-icon"></span><span>Account</span></a></li>
-							<li><a href="#" class="nav-icon"><span class="lnr lnr-exit nav-icon"></span><span>Logout</span></a></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<main class="dashboard-main">
-			<div class="row">
-				<div class="column-small-12">
-					<div class="card no-padding plant-detail-header">
-						<div class="row no-padding">
-							<div class="column-small-4 column-large-3 column-xlarge-2 no-padding detail-image-wrapper">
-								<div class="plant-image-header" style="background-image: url('images/plants/plant_sample.jpg')">
-								</div>
-							</div>
-							<div class="column-small-8 column-large-9 column-xlarge-8">
-								<div class="row plant-info-wrapper">
-									<div class="column-small-12 column-large-5">
-										<div><h1 class="h3 plant-name">Planty</h1><a href="#" class="hide-for-xlarge"><span class="lnr lnr-pencil"></span></a></div>
-										<p class="update-info">Updated at 10/31/2018 at 14:58</p>
-									</div>
-									<div class="column-small-6 column-large-4">
-										<ul class="plant-info">
-											<li><span class="lnr lnr-book"></span>Plant Type</li>
-											<li><span class="lnr lnr-history"></span>67 Days</li>
-										</ul>
-									</div>
-									<div class="column-small-6 column-large-3">
-										<p class="health-title">Overall Health</p>
-										<p class="health-info health-good">Good</p>
-									</div>
-								</div>
-							</div>
-							<div class="column-large-2 edit-wrapper">
-								<a class="button">Edit</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column-small-12 column-medium-6 column-large-4">
-					<div class="card">
-						<div class="card-title">Temperature</div>
-						<canvas id="temperatureChart"></canvas>
-					</div>
-				</div>
-				<div class="column-small-12 column-medium-6 column-large-4">
-					<div class="card">
-						<div class="card-title">Humidity</div>
-						<canvas id="moistureChart"></canvas>
-					</div>
-				</div>
-				<div class="column-small-12 column-medium-6 column-large-4">
-					<div class="card">
-						<div class="card-title">Light</div>
-						<canvas id="lightChart"></canvas>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column-small-12 column-large-8">
-					<div class="card">
-						<div class="card-title">History</div>
-						<canvas id="historyChart"></canvas>
-					</div>
-				</div>
-				<div class="column-small-12 column-large-4">
-					<div class="card"></div>
-				</div>
-			</div>
-		</main>
-	</div>
+    <div class="sidebar">
+        <div class="sidebar-inner">
+            <div class="sidebar-logo">
+                <div class="sidebar-full">
+                    <div class="logo">
+                        <a href="#"><img src="images/Logo-Horizontal-White.svg" alt=""></a>
+                        <span class="sidebar-toggle"><a href="#"><span class="lnr lnr-chevron-left-circle"></span></a></span>
+                    </div>
+                </div>
+                <div class="sidebar-collapsed">
+                    <div class="logo">
+                        <a href="#"><img src="images/Symbol-White.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <ul class="sidebar-menu scrollable">
+                <li class="nav-item">
+                    <a class="sidebar-link" href="index.html">
+                        <span class="lnr lnr-star nav-icon"></span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="sidebar-link active dropdown-toggle">
+                        <span class="lnr lnr-star nav-icon"></span>
+                        <span class="title">My Plants</span>
+                        <span class="arrow-right"><span class="lnr lnr-chevron-right"></span></span>
+                        <span class="arrow-down"><span class="lnr lnr-chevron-down"></span></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="sidebar-link" href="#">Plant 1</a></li>
+                        <li><a class="sidebar-link" href="#">Plant 2</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="sidebar-link" href="#">
+                        <span class="lnr lnr-star nav-icon"></span>
+                        <span class="title">Plant Library</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="sidebar-link" href="#">
+                        <span class="lnr lnr-star nav-icon"></span>
+                        <span class="title">Settings</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="sidebar-link" href="#">
+                        <span class="lnr lnr-star nav-icon"></span>
+                        <span class="title">Help</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="page-wrapper">
+        <div class="header navbar">
+            <div class="header-container">
+                <ul class="nav-left">
+                    <li class="sidebar-toggle hide-for-xxlarge"><a href="#"><span class="lnr lnr-menu"></span></a></li>
+                    <li class="search-icon show-for-medium"><a><span class="lnr lnr-magnifier"></span></a></li>
+                    <li class="search-input show-for-medium"><input class="form-control" type="text" placeholder="Search..."></li>
+                </ul>
+                <img class="mobile-logo show-for-small" src="images/Symbol.svg" alt="">
+                <ul class="nav-right">
+                    <li class="dropdown-usr">
+                        <a href="#" class="dropdown-user dropdown-toggle-usr">
+                            <span class="lnr lnr-chevron-down show-for-medium"></span>
+                            <span class="user-name show-for-medium">John Doe</span>
+                            <img src="https://randomuser.me/api/portraits/men/10.jpg" alt="">
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class=""><span class="lnr lnr-user nav-icon"></span><span>Account</span></a></li>
+                            <li><a href="#" class="nav-icon"><span class="lnr lnr-exit nav-icon"></span><span>Logout</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <main class="dashboard-main">
+            <div class="row">
+                <div class="column-small-12">
+                    <div class="card no-padding plant-detail-header">
+                        <div class="row no-padding">
+                            <div class="column-small-4 column-large-3 column-xlarge-2 no-padding detail-image-wrapper">
+                                <div class="plant-image-header" style="background-image: url('images/plants/plant_sample.jpg')">
+                                </div>
+                            </div>
+                            <div class="column-small-8 column-large-9 column-xlarge-8">
+                                <div class="row plant-info-wrapper">
+                                    <div class="column-small-12 column-large-5">
+                                        <div><h1 class="h3 plant-name">Planty</h1><a href="#" class="hide-for-xlarge"><span class="lnr lnr-pencil"></span></a></div>
+                                        <p class="update-info">Updated at 10/31/2018 at 14:58</p>
+                                    </div>
+                                    <div class="column-small-6 column-large-4">
+                                        <ul class="plant-info">
+                                            <li><span class="lnr lnr-book"></span>Plant Type</li>
+                                            <li><span class="lnr lnr-history"></span>67 Days</li>
+                                        </ul>
+                                    </div>
+                                    <div class="column-small-6 column-large-3">
+                                        <p class="health-title">Overall Health</p>
+                                        <p class="health-info health-good">Good</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column-large-2 edit-wrapper">
+                                <a class="button">Edit</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column-small-12 column-medium-6 column-large-4">
+                    <div class="card">
+                        <div class="card-title">Temperature</div>
+                        <canvas id="temperatureChart"></canvas>
+                    </div>
+                </div>
+                <div class="column-small-12 column-medium-6 column-large-4">
+                    <div class="card">
+                        <div class="card-title">Humidity</div>
+                        <canvas id="moistureChart"></canvas>
+                    </div>
+                </div>
+                <div class="column-small-12 column-medium-6 column-large-4">
+                    <div class="card">
+                        <div class="card-title">Light</div>
+                        <canvas id="lightChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column-small-12 column-large-8">
+                    <div class="card">
+                        <div class="card-title">History</div>
+                        <canvas id="historyChart" style="height: 298px"></canvas>
+                    </div>
+                </div>
+                <div class="column-small-12 column-large-4">
+                    <div class="card weather-card">
+                        <div class="row">
+                            <div class="column-small-12 weather-front">
+                                <div class="row">
+                                    <div class="column-small-6">
+                                        <div class="current-weather"><span class="wi wi-day-cloudy"></span></div>
+                                    </div>
+                                    <div class="column-small-6">
+                                        <div class="weather-info">
+                                            <p class="date">31 October</p>
+                                            <p class="temp">4º<span>7º</span><span>1º</span></p>
+                                            <p class="status">Cloudy</p>
+                                            <p class="location">London, ON</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column-small-12 weather-back">
+                                <div class="row">
+                                    <div class="column-small-3">
+                                        <div class="weather-hist">
+                                            <div class="day">Thu</div>
+                                            <div class="weather-icon"><span class="wi wi-day-cloudy"></span></div>
+                                            <div class="date">01/11</div>
+                                            <div class="temp">8º 2º</div>
+                                        </div>
+                                    </div>
+                                    <div class="column-small-3">
+                                        <div class="weather-hist">
+                                            <div class="day">Thu</div>
+                                            <div class="weather-icon"><span class="wi wi-day-cloudy"></span></div>
+                                            <div class="date">01/11</div>
+                                            <div class="temp">8º 2º</div>
+                                        </div>
+                                    </div>
+                                    <div class="column-small-3">
+                                        <div class="weather-hist">
+                                            <div class="day">Thu</div>
+                                            <div class="weather-icon"><span class="wi wi-day-cloudy"></span></div>
+                                            <div class="date">01/11</div>
+                                            <div class="temp">8º 2º</div>
+                                        </div>
+                                    </div>
+                                    <div class="column-small-3">
+                                        <div class="weather-hist">
+                                            <div class="day">Thu</div>
+                                            <div class="weather-icon"><span class="wi wi-day-cloudy"></span></div>
+                                            <div class="date">01/11</div>
+                                            <div class="temp">8º 2º</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 </div>
 
 <script type="text/javascript" src="js/charts.js"></script>
 
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
-
 
 </body>
 </html>
