@@ -51,9 +51,9 @@
             @include breakpoint($breakpoint) {
                 .column-#{$breakpoint}-#{$i} {
                     flex: 0 0 auto;
+                    padding: rem-calc(10);
                     width: percentage($i / $columns);
                     min-width: 0;
-	                padding: rem-calc(10);
                 }
             }
         }
