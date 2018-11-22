@@ -1,9 +1,13 @@
 .accordion-wrapper {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid set-color('off-white');
+
+    @include breakpoint(large) {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.1);
+        border-bottom: none;
+    }
 
     .accordion {
         transform: translateZ(0);
-        //box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
         background: set-color('white');
 
         .accordion-toggle {
@@ -24,6 +28,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-top: 1px solid set-color('off-white');
 
             span {
                 margin-right: rem-calc(10);
@@ -39,7 +44,6 @@
             padding: 0 20px;
             font-size: rem-calc(14);
             font-weight: 400;
-            border-top: 1px solid set-color('off-white');
             cursor: pointer;
             width: 100%;
         }
