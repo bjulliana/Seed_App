@@ -1,0 +1,136 @@
+.library-main.library-main {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 150px);
+    padding: 0;
+
+    .library-left {
+        display: none;
+
+        @include breakpoint(large) {
+            display: block;
+            border-right: 1px solid set-color('off-white');
+            padding: 0;
+        }
+
+        .plant-list {
+            overflow-y: scroll;
+            height: 100%;
+
+            .single-item {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                padding: rem-calc(10 30);
+                border-bottom: 1px solid set-color('off-white');
+                font-weight: 400;
+
+                &.active {
+                    background-color: set-color('off-white');
+                }
+
+                .plant-image {
+                    max-width: rem-calc(50);
+                    margin-right: rem-calc(15);
+                }
+            }
+        }
+    }
+
+
+
+    .library-right {
+        padding: 0;
+        overflow: scroll;
+
+        @include breakpoint(large) {
+            padding: rem-calc(30);
+        }
+
+        .plant-description {
+            .title-area {
+                display: flex;
+                align-items: center;
+                padding: rem-calc(10);
+
+                @include breakpoint(large) {
+                    padding: 0;
+                }
+
+                img {
+                    max-width: 50px;
+                    margin-right: rem-calc(10);
+                }
+
+                .plant-name {
+                    text-transform: capitalize;
+                    font-family: $secondary-font;
+                    margin-bottom: 0;
+
+                    @include breakpoint(large) {
+                        margin-bottom: rem-calc(18);
+                    }
+                }
+            }
+        }
+
+        hr {
+            margin: 0;
+        }
+
+        .plant-information {
+            max-height: 100px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: rem-calc(10);
+
+            @include breakpoint(large) {
+                max-height: 100%;
+            }
+
+            p {
+                font-size: rem-calc(14);
+                line-height: 2;
+            }
+        }
+
+        .read-more {
+            display: block;
+            text-align: center;
+            margin-bottom: rem-calc(20);
+
+            @include breakpoint(large) {
+                display: none;
+            }
+        }
+    }
+}
+
+.library-search {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: rem-calc(30);
+
+    .search-icon {
+        font-size: rem-calc(18);
+    }
+
+    .search-input {
+        input {
+            width: 100%;
+            text-transform: capitalize;
+        }
+    }
+}
+
+.search-mobile {
+
+    .library-search {
+        padding: 0;
+    }
+
+    @include breakpoint(large) {
+        display: none;
+    }
+}

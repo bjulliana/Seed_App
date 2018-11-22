@@ -2,10 +2,19 @@
 Seed! A Plant Monitoring App
 
 ## Installations Instructions
-Clone Repo `git clone https://github.com/bjulliana/Seed_Website.git`    
+Clone Repo `git clone https://github.com/bjulliana/Seed_App.git`    
 Run `npm install --global gulp-cli`    
 Run `npm install`    
 Run `gulp watch` to view changes in browser and compile sass  
+
+### Command to Merge Master to your Branch after Master Updates   
+Add and Commit all your changes. Make sure there is no uncommited changes on git.
+Run `git checkout master` to change from your branch to master     
+Run `git pull` to pull the last updates from master     
+Run `git checkout YOUR_BRANCH_NAME` to change from master to your branch  
+Run `git merge master` to merge master into your branch  
+If there is any conflicts those should be resolved, verifying if the master changes or your branch changes should be kept.
+
 
 ## Guide for Classes Usage  
 Row Class `row`    

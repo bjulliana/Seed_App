@@ -9,18 +9,19 @@
 	    dropdownUser       = document.querySelector('.dropdown-usr');
 
 	//Toggle Sidebar
-	sidebarTrigger.forEach(el => {
-		el.addEventListener('click', function () {
+	for (let i = 0; i < sidebarTrigger.length; i++) {
+		sidebarTrigger[i].addEventListener('click', function () {
 			app.classList.toggle('sidebar-open');
 		});
-	});
+	}
 
-	//Open Dropdown
+
+	//Toggle Dropdown
 	dropdownToggle.addEventListener('click', function () {
 		dropdown.classList.toggle('is-open');
 	});
 
-	//Open Dropdown User
+	//Toggle Dropdown User
 	dropdownToggleUser.addEventListener('click', function () {
 		dropdownUser.classList.toggle('is-open');
 	});
