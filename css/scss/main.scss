@@ -5,14 +5,15 @@
 @import 'base/typography.scss';
 @import 'base/variables.scss';
 //Sections
-//@import 'sections/navigation.scss';
 @import 'sections/style-guide.scss';
 @import 'sections/dashboard.scss';
 @import 'sections/sidebar.scss';
 @import 'sections/top-nav.scss';
 @import 'sections/plant-detail.scss';
+@import 'sections/library.scss';
 //Components
 @import 'components/button.scss';
 @import 'components/sections.scss';
 @import 'components/cards.scss';
 @import 'components/weather.scss';
+@import 'components/accordion.scss';

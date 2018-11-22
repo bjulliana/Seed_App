@@ -78,7 +78,9 @@ $border-color: #e6ecf5;
                         margin-right: rem-calc(40);
                     }
 
-                    &.active {
+                    &.active,
+                    &:hover,
+                    &:focus {
                         background-color: set-color('dark-green');
 
                         &::before {
@@ -119,7 +121,7 @@ $border-color: #e6ecf5;
                     }
                 }
 
-                .dropdown {
+                .dropdown-menu {
                     display: none;
                 }
             }
@@ -196,24 +198,24 @@ $border-color: #e6ecf5;
 
             .dropdown-menu {
                 display: none;
-                padding-left: rem-calc(70);
-                background-color: set-color('dark-green');
+                padding-left: 0;
 
                 > li {
-                    > a {
-                        display: block;
-                        padding: rem-calc(10);
+                    padding-left: rem-calc(70);
 
-                        &:hover,
-                        &:focus {
-                            background-color: transparent;
+                    &:hover,
+                    &:focus,
+                    &.active {
+                        background-color: set-color('dark-green');
+
+                        a:before {
+                            display: none;
                         }
                     }
 
-                    &.active {
-                        a {
-                            //color: $default-dark;
-                        }
+                    > a {
+                        display: block;
+                        padding: rem-calc(10);
                     }
                 }
             }
