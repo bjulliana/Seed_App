@@ -2176,7 +2176,7 @@ input[type='button'] {
       margin-bottom: 0.625rem; }
       @media screen and (min-width: 900px) {
         .library-main.library-main .library-right .plant-information {
-          max-height: 100%; } }
+          max-height: 100% !important; } }
       .library-main.library-main .library-right .plant-information p {
         font-size: 0.875rem;
         line-height: 2; }
