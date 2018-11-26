@@ -13,9 +13,6 @@ gulp.task('sass', function () {
 		           cascade : false
 	           }))
 	           .pipe(gulp.dest('css'))
-	           .pipe(browserSync.reload({
-		           stream: true
-	           }));
 });
 
 //Sass Lint task
