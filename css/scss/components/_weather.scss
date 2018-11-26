@@ -1,13 +1,31 @@
 .weather-card {
+    min-height: 210px;
+
+    @include breakpoint(medium) {
+        min-height: 0;
+    }
 
     .weather-front {
+        display: none;
+        transition: 0.1s ease-in-out;
+
+        @include breakpoint(medium) {
+            display: block;
+        }
+
+        &.active {
+            display: block !important;
+        }
 
         .row {
             align-items: center;
+            padding: rem-calc(0 10)
         }
 
         .current-weather img {
             max-width: 90px;
+            margin: 0 auto;
+            display: block;
         }
 
         .weather-info {
@@ -45,9 +63,18 @@
     .weather-back {
         display: none;
         text-align: center;
-        
+        transition: 0.1s ease-in-out;
+
+        &.active {
+            display: block !important;
+        }
+
         @include breakpoint(medium) {
             display: block;
+        }
+
+        .row {
+            padding: rem-calc(0 10)
         }
 
         .weather-hist {
