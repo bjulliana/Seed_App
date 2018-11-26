@@ -2209,3 +2209,23 @@ input[type='button'] {
 @media screen and (min-width: 900px) {
   .search-mobile {
     display: none; } }
+
+.loginCon {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0; }
+  .loginCon .row {
+    padding: 0; }
+
+.left-log {
+  padding: 0;
+  margin: 0; }
+
+.right-log {
+  height: 50px;
+  -ms-flex-pack: distribute;
+  justify-content: space-around; }
+
+.vertical-logo img {
+  width: 300px; }
