@@ -6,9 +6,8 @@
             align-items: center;
         }
 
-        .current-weather {
-            font-size: rem-calc(60);
-            text-align: center;
+        .current-weather img {
+            max-width: 90px;
         }
 
         .weather-info {
@@ -59,8 +58,9 @@
                 white-space: nowrap;
             }
 
-            .weather-icon {
-                font-size: rem-calc(24);
+            .weather-image img {
+                height: 50px;
+                max-height: 50px;
             }
         }
     }

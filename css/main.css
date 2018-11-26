@@ -87,6 +87,9 @@ hr {
   width: 100%;
   color: #7e7e7e; }
 
+canvas {
+  max-height: 327px; }
+
 .show-for-small {
   display: block; }
   @media screen and (min-width: 600px) {
@@ -1089,9 +1092,8 @@ input[type='button'] {
   -ms-flex-align: center;
   align-items: center; }
 
-.weather-card .weather-front .current-weather {
-  font-size: 3.75rem;
-  text-align: center; }
+.weather-card .weather-front .current-weather img {
+  max-width: 90px; }
 
 .weather-card .weather-front .weather-info p {
   margin: 0; }
@@ -1126,8 +1128,9 @@ input[type='button'] {
   .weather-card .weather-back .weather-hist .temp {
     font-size: 0.875rem;
     white-space: nowrap; }
-  .weather-card .weather-back .weather-hist .weather-icon {
-    font-size: 1.5rem; }
+  .weather-card .weather-back .weather-hist .weather-image img {
+    height: 50px;
+    max-height: 50px; }
 
 .accordion-wrapper {
   border-bottom: 1px solid #f5f5f5; }
