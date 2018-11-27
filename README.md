@@ -1,5 +1,8 @@
-# Seed_App
+# Seed_App (Working Version with electron@latest)
 Seed! A Plant Monitoring App
+
+## Important
+Minimum functional viewport size: 375px   
 
 ## Installations Instructions
 Clone Repo `git clone https://github.com/bjulliana/Seed_App.git`   
