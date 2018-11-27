@@ -1,8 +1,8 @@
 .weather-card {
-    min-height: 210px;
+    cursor: pointer;
 
     @include breakpoint(medium) {
-        min-height: 0;
+        cursor: auto;
     }
 
     .weather-front {
@@ -29,23 +29,38 @@
         }
 
         .weather-info {
+
+            @include breakpoint(large) {
+                padding-left: rem-calc(12);
+            }
+
             p {
                 margin: 0;
             }
 
             .date {
                 font-weight: 400;
+                white-space: nowrap;
             }
 
-            .temp {
-                font-size: rem-calc(40);
+            .temp,
+            .temp-mobile {
+                font-size: rem-calc(46);
                 font-weight: 400;
                 margin-top: rem-calc(10);
 
+                @include breakpoint(medium) {
+                    font-size: rem-calc(40);
+                }
+
                 span {
-                    font-size: rem-calc(14);
+                    font-size: rem-calc(20);
                     font-weight: 300;
                     margin: rem-calc(0 5);
+
+                    @include breakpoint(medium) {
+                        font-size: rem-calc(14);
+                    }
                 }
             }
 

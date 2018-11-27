@@ -1086,10 +1086,10 @@ input[type='button'] {
     font-weight: 700; }
 
 .weather-card {
-  min-height: 210px; }
+  cursor: pointer; }
   @media screen and (min-width: 600px) {
     .weather-card {
-      min-height: 0; } }
+      cursor: auto; } }
   .weather-card .weather-front {
     display: none;
     -webkit-transition: 0.1s ease-in-out;
@@ -1108,18 +1108,32 @@ input[type='button'] {
       max-width: 90px;
       margin: 0 auto;
       display: block; }
+    @media screen and (min-width: 900px) {
+      .weather-card .weather-front .weather-info {
+        padding-left: 0.75rem; } }
     .weather-card .weather-front .weather-info p {
       margin: 0; }
     .weather-card .weather-front .weather-info .date {
-      font-weight: 400; }
-    .weather-card .weather-front .weather-info .temp {
-      font-size: 2.5rem;
+      font-weight: 400;
+      white-space: nowrap; }
+    .weather-card .weather-front .weather-info .temp,
+    .weather-card .weather-front .weather-info .temp-mobile {
+      font-size: 2.875rem;
       font-weight: 400;
       margin-top: 0.625rem; }
-      .weather-card .weather-front .weather-info .temp span {
-        font-size: 0.875rem;
+      @media screen and (min-width: 600px) {
+        .weather-card .weather-front .weather-info .temp,
+        .weather-card .weather-front .weather-info .temp-mobile {
+          font-size: 2.5rem; } }
+      .weather-card .weather-front .weather-info .temp span,
+      .weather-card .weather-front .weather-info .temp-mobile span {
+        font-size: 1.25rem;
         font-weight: 300;
         margin: 0 0.3125rem; }
+        @media screen and (min-width: 600px) {
+          .weather-card .weather-front .weather-info .temp span,
+          .weather-card .weather-front .weather-info .temp-mobile span {
+            font-size: 0.875rem; } }
     .weather-card .weather-front .weather-info .status {
       text-transform: uppercase;
       font-size: 1.25rem; }
