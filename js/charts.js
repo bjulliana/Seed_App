@@ -188,7 +188,7 @@
                             ticks     : {
                                 //min        : 10,
                                 //max        : 26,
-                                callback   : function (value, index, values) {
+                                callback: function (value, index, values) {
                                     return value + 'ºC';
                                 }
                             }

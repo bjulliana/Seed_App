@@ -1,36 +1,36 @@
 {
-	"name": "seed_app",
-	"version": "1.0.0",
-	"description": "Plant Monitoring System App",
-	"main": "main.js",
-	"scripts": {
-		"start": "electron .",
-		"postinstall": "electron-rebuild",
-		"electron-rebuild": "electron-rebuild"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/bjulliana/Seed_App.git"
-	},
-	"author": "",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/bjulliana/Seed_App/issues"
-	},
-	"homepage": "https://github.com/bjulliana/Seed_App#readme",
-	"devDependencies": {
-		"browser-sync": "^2.26.3",
-		"electron-rebuild": "^1.8.2",
-		"gulp": "^3.9.1",
-		"gulp-autoprefixer": "^6.0.0",
-		"gulp-sass": "^4.0.2",
-		"gulp-sass-lint": "^1.4.0",
-		"node-sass": "^4.10.0"
-	},
-	"dependencies": {
-		"chart.js": "^2.7.3",
-		"electron-prebuilt": "^0.36.7",
-		"johnny-five": "^0.9.62",
-		"serialport": "^7.0.2"
-	}
+  "name": "electron-arduino-quickstart",
+  "version": "1.0.0",
+  "description": "Boilerplate for getting started with Arduino and Electron",
+  "main": "window.js",
+  "scripts": {
+    "postinstall": "./node_modules/.bin/electron-rebuild -v $(./node_modules/.bin/electron -v)",
+    "start": "./node_modules/.bin/electron .",
+    "watch": "./node_modules/.bin/electron . --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leoweigand/electron-arduino-quickstart.git"
+  },
+  "author": "Leo Weigand",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leoweigand/electron-arduino-quickstart/issues"
+  },
+  "homepage": "https://github.com/leoweigand/electron-arduino-quickstart#readme",
+  "dependencies": {
+    "chart.js": "^2.7.3",
+    "johnny-five": "^0.10.13",
+    "serialport": "^7.0.2"
+  },
+  "devDependencies": {
+    "electron": "^3.0.10",
+    "electron-rebuild": "^1.8.2",
+    "electron-reload": "^1.2.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-lint": "^1.4.0",
+    "node-sass": "^4.10.0"
+  }
 }
