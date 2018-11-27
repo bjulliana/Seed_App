@@ -126,57 +126,82 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="column-small-12 column-medium-6 column-large-4">
+            <div class="row tabs-row">
+                <div class="column-small-12 hide-for-large">
+                    <div class="card tabs-card">
+                        <ul class="tabs">
+                            <li class="temp-link chart-link"><a>Temperature</a></li>
+                            <li class="moisture-link chart-link active"><a>Moisture</a></li>
+                            <li class="light-link chart-link"><a>Light</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row charts-row">
+                <div class="column-small-12 column-large-4 chart-card active moisture-card">
+                    <div class="card">
+                        <div class="card-title">Moisture</div>
+                        <div class="canvas-wrapper">
+                            <canvas id="moistureChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="column-small-12 column-large-4 chart-card temp-card">
                     <div class="card">
                         <div class="card-title">Temperature</div>
-                        <canvas id="temperatureChart"></canvas>
+                        <div class="row temp-wrapper">
+                            <div class="column-small-5 text-right">
+                                <img class="temp-icon" src="images/weather/thermometer.svg">
+                            </div>
+                            <div class="column-small-7 temp-info"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="column-small-12 column-medium-6 column-large-4">
-                    <div class="card">
-                        <div class="card-title">Humidity</div>
-                        <canvas id="moistureChart"></canvas>
-                    </div>
-                </div>
-                <div class="column-small-12 column-medium-6 column-large-4">
+                <div class="column-small-12 column-large-4 chart-card light-card">
                     <div class="card">
                         <div class="card-title">Light</div>
-                        <canvas id="lightChart"></canvas>
+                        <div class="canvas-wrapper">
+                            <canvas id="lightChart"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="column-small-12 column-large-8">
+                <div class="column-small-12 column-medium-12 column-large-8">
                     <div class="card">
-                        <div class="card-title">History</div>
-                        <canvas id="historyChart" style="height: 298px"></canvas>
+                        <div class="card-title history-title">Moisture History</div>
+                        <canvas id="historyMoisture" class="historyChart historyMoisture active"></canvas>
+                        <canvas id="historyLight" class="historyChart historyLight"></canvas>
+                        <canvas id="historyTemp" class="historyChart historyTemp"></canvas>
                     </div>
                 </div>
-                <div class="column-small-12 column-large-4">
+                <div class="column-small-12 column-medium-12 column-large-4">
                     <div class="card weather-card">
                         <div class="row">
-                            <div class="column-small-12 weather-front">
-                                <div class="row">
-                                    <div class="column-small-6">
-                                        <div class="current-weather"><span class="wi wi-day-cloudy"></span></div>
+                            <div class="column-small-12 column-medium-6 column-large-12 weather-front active">
+                                <div class="row no-padding">
+                                    <div class="column-small-4 show-for-small weather-info text-right">
+                                        <p class="temp-mobile">4º<br><span>7º</span><span>1º</span></p>
                                     </div>
-                                    <div class="column-small-6">
+                                    <div class="column-small-4 column-medium-5 column-large-4 column-xlarge-6">
+                                        <div class="current-weather"><img src="images/weather/partly-cloudy-day.svg"></div>
+                                    </div>
+                                    <div class="column-small-4 column-medium-7 column-large-8 column-xlarge-6">
                                         <div class="weather-info">
                                             <p class="date">31 October</p>
-                                            <p class="temp">4º<span>7º</span><span>1º</span></p>
+                                            <p class="show-for-medium temp">4º<span>7º</span><span>1º</span></p>
                                             <p class="status">Cloudy</p>
                                             <p class="location">London, ON</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="column-small-12 weather-back">
-                                <div class="row">
+                            <div class="column-small-12 column-medium-6 column-large-12 weather-back">
+                                <div class="row weather-forecast">
                                     <div class="column-small-3">
                                         <div class="weather-hist">
                                             <div class="day">Thu</div>
-                                            <div class="weather-icon"><span class="wi wi-day-cloudy"></span></div>
+                                            <div class="weather-image"><img src="images/weather/wind.svg"></div>
                                             <div class="date">01/11</div>
                                             <div class="temp">8º 2º</div>
                                         </div>
@@ -184,7 +209,7 @@
                                     <div class="column-small-3">
                                         <div class="weather-hist">
                                             <div class="day">Thu</div>
-                                            <div class="weather-icon"><span class="wi wi-day-cloudy"></span></div>
+                                            <div class="weather-image"><img src="images/weather/snow.svg"></div>
                                             <div class="date">01/11</div>
                                             <div class="temp">8º 2º</div>
                                         </div>
@@ -192,7 +217,7 @@
                                     <div class="column-small-3">
                                         <div class="weather-hist">
                                             <div class="day">Thu</div>
-                                            <div class="weather-icon"><span class="wi wi-day-cloudy"></span></div>
+                                            <div class="weather-image"><img src="images/weather/fog.svg"></div>
                                             <div class="date">01/11</div>
                                             <div class="temp">8º 2º</div>
                                         </div>
@@ -200,7 +225,7 @@
                                     <div class="column-small-3">
                                         <div class="weather-hist">
                                             <div class="day">Thu</div>
-                                            <div class="weather-icon"><span class="wi wi-day-cloudy"></span></div>
+                                            <div class="weather-image"><img src="images/weather/partly-cloudy-day.svg"></div>
                                             <div class="date">01/11</div>
                                             <div class="temp">8º 2º</div>
                                         </div>
@@ -216,7 +241,7 @@
 </div>
 
 <script type="text/javascript" src="js/charts.js"></script>
-
+<script type="text/javascript" src="js/weather.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 
