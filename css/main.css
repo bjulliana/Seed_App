@@ -2211,9 +2211,6 @@ input[type='button'] {
     display: none; } }
 
 .loginCon {
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
   padding: 0; }
   .loginCon .row {
     padding: 0; }
@@ -2223,9 +2220,41 @@ input[type='button'] {
   margin: 0; }
 
 .right-log {
-  height: 50px;
+  height: 60px;
   -ms-flex-pack: distribute;
   justify-content: space-around; }
 
 .vertical-logo img {
-  width: 300px; }
+  margin-top: 150px;
+  width: 100px; }
+  @media screen and (min-width: 900px) {
+    .vertical-logo img {
+      width: 150px; } }
+
+.checkbox {
+  font-weight: normal;
+  margin-top: auto;
+  margin-bottom: auto;
+  grid-column: 3/6; }
+
+.link {
+  font-weight: normal;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-weight: none;
+  grid-column: 2/4; }
+
+.button-white {
+  border: 3px solid #307367;
+  background: transparent;
+  color: #307367;
+  margin-left: 20px;
+  width: 180px; }
+
+.button-green {
+  margin-right: 20px;
+  width: 180px; }
+
+.privacytxt p {
+  margin-top: 100px;
+  margin-bottom: 5px; }

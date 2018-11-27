@@ -1,24 +1,56 @@
 
 .loginCon {
-    justify-content: center;
-    padding: 0;
+ padding: 0;
     .row {
-      padding:0;
+    padding:0;
     }  
-
 }
 
 .left-log  {
   padding: 0;
   margin: 0;
-  
 }
 
 .right-log {
-    height:50px;
+    height:60px;
     justify-content: space-around;
 }
 
 .vertical-logo img {
-width:300px;
+margin-top: 150px;
+width:100px; 
+  @include breakpoint(large) {
+  width:150px;        }
 }
+
+.checkbox {
+  font-weight: normal;
+  margin-top: auto;
+  margin-bottom: auto;
+  grid-column: 3/6;
+}  
+
+.link {
+  font-weight: normal;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-weight: none;
+  grid-column: 2/4;
+} 
+.button-white {
+border: 3px solid #307367;
+background: transparent;
+color: #307367; 
+margin-left: 20px;
+width: 180px;
+  }
+
+.button-green {
+margin-right: 20px;
+width: 180px;
+}
+
+.privacytxt p{
+margin-top: 100px;
+margin-bottom: 5px;
+  }
