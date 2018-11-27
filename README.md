@@ -6,7 +6,7 @@ Minimum functional viewport size: 375px
 
 ## Installations Instructions
 Clone Repo `git clone https://github.com/bjulliana/Seed_App.git`   
-Create a New Branch `git checkout -b [NAME_OF_YOUR_BRANCH]`  
+Inside the App Root Folder Create a New Branch `git checkout -b [NAME_OF_YOUR_BRANCH]`  
 Run `npm install --global gulp-cli`    
 Run `npm install`    
 Run `gulp watch` to view changes in browser and compile sass  
