@@ -1,6 +1,5 @@
 (function () {
     'use strict';
-
     let sidebarTrigger     = document.querySelectorAll('.sidebar-toggle'),
         app                = document.querySelector('.app'),
         dropdownToggle     = document.querySelector('.dropdown-toggle'),
@@ -30,7 +29,7 @@
         dropdownUser.classList.toggle('is-open');
     });
 
-    //Toggle Dropdown
+    //Flip Weather Card
     weatherCard.addEventListener('click', function () {
         if (frontCard.classList.contains('active')) {
             console.log('clicked');
@@ -43,7 +42,7 @@
     });
 
     //Toggle Read More
-    if(readMore) {
+    if (readMore) {
         readMore.addEventListener('click', function () {
             if (plantInfo.classList.contains('short')) {
                 plantInfo.style.maxHeight = '100%';
@@ -56,6 +55,5 @@
             }
         });
     }
-
 
 })();

@@ -109,7 +109,14 @@
             margin: rem-calc(0 10 0 0);
         }
     }
+}
 
+.historyChart {
+    display: none !important;
+
+    &.active {
+        display: block !important;
+    }
 }
 
 

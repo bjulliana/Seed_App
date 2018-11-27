@@ -128,19 +128,19 @@
             </div>
             <div class="row">
                 <div class="column-small-12 column-medium-6 column-large-4">
-                    <div class="card">
+                    <div class="card temp-card">
                         <div class="card-title">Temperature</div>
                         <canvas id="temperatureChart"></canvas>
                     </div>
                 </div>
                 <div class="column-small-12 column-medium-6 column-large-4">
-                    <div class="card">
+                    <div class="card moisture-card">
                         <div class="card-title">Humidity</div>
                         <canvas id="moistureChart"></canvas>
                     </div>
                 </div>
                 <div class="column-small-12 column-medium-6 column-large-4">
-                    <div class="card">
+                    <div class="card light-card">
                         <div class="card-title">Light</div>
                         <canvas id="lightChart"></canvas>
                     </div>
@@ -150,7 +150,9 @@
                 <div class="column-small-12 column-medium-12 column-large-8">
                     <div class="card">
                         <div class="card-title">History</div>
-                        <canvas id="historyChart" style="height: 298px"></canvas>
+                        <canvas id="historyMoisture" class="historyChart historyMoisture active"></canvas>
+                        <canvas id="historyLight" class="historyChart historyLight"></canvas>
+                        <canvas id="historyTemp" class="historyChart historyTemp"></canvas>
                     </div>
                 </div>
                 <div class="column-small-12 column-medium-12 column-large-4">

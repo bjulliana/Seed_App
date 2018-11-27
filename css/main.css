@@ -87,9 +87,6 @@ hr {
   width: 100%;
   color: #7e7e7e; }
 
-canvas {
-  max-height: 327px; }
-
 .show-for-small {
   display: block; }
   @media screen and (min-width: 600px) {
@@ -2120,6 +2117,11 @@ input[type='button'] {
       justify-content: center; } }
   .plant-detail-header .edit-wrapper .button {
     margin: 0 0.625rem 0 0; }
+
+.historyChart {
+  display: none !important; }
+  .historyChart.active {
+    display: block !important; }
 
 .library-main.library-main {
   display: -webkit-box;
