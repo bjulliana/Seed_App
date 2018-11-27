@@ -1,14 +1,20 @@
 (function () {
     'use strict';
-    let Chart         = require('chart.js'),
-        moment        = require('moment'),
-        tempCard      = document.querySelector('.temp-card'),
-        moistureCard  = document.querySelector('.moisture-card'),
-        lightCard     = document.querySelector('.light-card'),
-        historyCards  = document.querySelectorAll('.historyChart'),
-        tempChart     = document.querySelector('.historyTemp'),
-        moistureChart = document.querySelector('.historyMoisture'),
-        lightChart    = document.querySelector('.historyLight');
+    let Chart           = require('chart.js'),
+        moment          = require('moment'),
+        historyCards    = document.querySelectorAll('.historyChart'),
+        historyTemp     = document.querySelector('.historyTemp'),
+        historyMoisture = document.querySelector('.historyMoisture'),
+        historyLight    = document.querySelector('.historyLight'),
+        chartLink       = document.querySelectorAll('.chart-link'),
+        tempLink        = document.querySelector('.temp-link'),
+        moistureLink    = document.querySelector('.moisture-link'),
+        lightLink       = document.querySelector('.light-link'),
+        chartCard       = document.querySelectorAll('.chart-card'),
+        tempCard        = document.querySelector('.temp-card'),
+        moistureCard    = document.querySelector('.moisture-card'),
+        lightCard       = document.querySelector('.light-card'),
+        historyTitle    = document.querySelector('.history-title');
 
     function histDates(days) {
         return moment().add(days, 'd').format('MMM DD');
@@ -31,31 +37,24 @@
                 ]
             },
             options: {
-                legend    : {
+                legend             : {
                     display: false
                 },
-                tooltips  : {
+                tooltips           : {
                     enabled      : true,
                     callbacks    : {
                         label: (item) => item.yLabel + '%'
                     },
                     displayColors: false
                 },
-                responsive: true,
-                scales    : {
+                responsive         : true,
+                maintainAspectRatio: true,
+                scales             : {
                     xAxes: [
                         {
                             gridLines         : {
                                 drawBorder: false,
                                 display   : false
-                            },
-                            type              : 'time',
-                            time              : {
-                                unit          : 'day',
-                                round         : 'day',
-                                displayFormats: {
-                                    day: 'MMM D'
-                                }
                             },
                             barPercentage     : 1.4,
                             categoryPercentage: 0.4,
@@ -117,14 +116,6 @@
                                 drawBorder: false,
                                 display   : false
                             },
-                            type              : 'time',
-                            time              : {
-                                unit          : 'day',
-                                round         : 'day',
-                                displayFormats: {
-                                    day: 'MMM D'
-                                }
-                            },
                             barPercentage     : 1.4,
                             categoryPercentage: 0.4,
                             ticks             : {
@@ -157,9 +148,10 @@
         let histChart = new Chart(ctx, {
             type   : 'line',
             data   : {
+                labels  : [histDates(-5), histDates(-4), histDates(-3), histDates(-2), histDates(-1), histDates(0)],
                 datasets: [
                     {
-                        data           : ['2ºC', '-1ºC', '-1ºC', '0ºC', '3ºC', '4ºC', '3ºC'],
+                        data           : ['22', '24', '23', '13', '20', '21'],
                         borderColor    : '#FF8373',
                         fill           : true,
                         backgroundColor: 'rgba(255, 131, 115, 0.2)'
@@ -172,7 +164,10 @@
                 },
                 tooltips  : {
                     enabled      : true,
-                    displayColors: false
+                    displayColors: false,
+                    callbacks    : {
+                        label: (item) => item.yLabel + 'ºC'
+                    }
                 },
                 responsive: true,
                 scales    : {
@@ -181,19 +176,22 @@
                             display   : true,
                             scaleLabel: {
                                 display: true
-                            },
-                            labels    : [histDates(-5), histDates(-4), histDates(-3), histDates(-2), histDates(-1), histDates(0)]
+                            }
                         }
                     ],
                     yAxes: [
                         {
-                            type      : 'category',
-                            position  : 'left',
                             display   : true,
                             scaleLabel: {
                                 display: true
                             },
-                            labels    : ['5ºC', '4ºC', '3ºC', '2ºC', '1ºC', '0ºC', '-1ºC', '-2ºC', '-3ºC']
+                            ticks     : {
+                                //min        : 10,
+                                //max        : 26,
+                                callback   : function (value, index, values) {
+                                    return value + 'ºC';
+                                }
+                            }
                         }
                     ]
                 }
@@ -201,29 +199,51 @@
         });
     }
 
-    tempCard.addEventListener('click', function () {
+    function clearClasses() {
+        for (let i = 0; i < chartLink.length; i++) {
+            chartLink[i].classList.remove('active');
+        }
         for (let i = 0; i < historyCards.length; i++) {
             historyCards[i].classList.remove('active');
         }
-        tempChart.classList.add('active');
+        for (let i = 0; i < chartCard.length; i++) {
+            chartCard[i].classList.remove('active');
+        }
+    }
+
+    function tempActive() {
+        clearClasses();
+        tempCard.classList.add('active');
+        tempLink.classList.add('active');
+        historyTemp.classList.add('active');
+        historyTitle.innerHTML = 'Temperature History';
         historyChartTemp();
-    });
+    }
 
-    moistureCard.addEventListener('click', function () {
-        for (let i = 0; i < historyCards.length; i++) {
-            historyCards[i].classList.remove('active');
-        }
-        moistureChart.classList.add('active');
+    function moistureActive() {
+        clearClasses();
+        moistureCard.classList.add('active');
+        moistureLink.classList.add('active');
+        historyMoisture.classList.add('active');
+        historyTitle.innerHTML = 'Moisture History';
         historyChartMoisture();
-    });
+    }
 
-    lightCard.addEventListener('click', function () {
-        for (let i = 0; i < historyCards.length; i++) {
-            historyCards[i].classList.remove('active');
-        }
-        lightChart.classList.add('active');
+    function lightActive() {
+        clearClasses();
+        lightCard.classList.add('active');
+        lightLink.classList.add('active');
+        historyLight.classList.add('active');
+        historyTitle.innerHTML = 'Light History';
         historyChartLight();
-    });
+    }
+
+    tempLink.addEventListener('click', tempActive, false);
+    tempCard.addEventListener('click', tempActive, false);
+    moistureLink.addEventListener('click', moistureActive, false);
+    moistureCard.addEventListener('click', moistureActive, false);
+    lightLink.addEventListener('click', lightActive, false);
+    lightCard.addEventListener('click', lightActive, false);
 
     historyChartMoisture();
 

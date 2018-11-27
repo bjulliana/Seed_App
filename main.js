@@ -6,7 +6,7 @@ var mainWindow = null;
 
 app.on('ready', function () {
 	mainWindow = new BrowserWindow({
-		height        : 800,
+		height        : 900,
 		resizable     : true,
 		title         : 'j5/electron template',
 		width         : 1600,

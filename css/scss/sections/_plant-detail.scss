@@ -119,4 +119,124 @@
     }
 }
 
+.tabs-row {
+    div[class*='column-'] {
+        padding-bottom: 0;
+
+        @include breakpoint(large) {
+            padding-bottom: rem-calc(10);
+        }
+    }
+    .tabs-card {
+        background-color: set-color('grey-100');
+        padding: 0;
+
+        .tabs {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+
+            li {
+                border-right: 1px solid set-color('grey-300');
+                width: 100%;
+                text-align: center;
+
+                a {
+                    padding: rem-calc(15);
+                    font-size: rem-calc(18);
+                    font-weight: 400;
+                    cursor: pointer;
+                    display: block;
+                }
+
+                &:last-of-type {
+                    border-right: none;
+                }
+
+                &.active,
+                &:hover {
+                    background-color: set-color('grey-300');
+                }
+            }
+        }
+    }
+}
+
+.charts-row {
+    div[class*='column-'] {
+        padding-top: 0;
+
+        @include breakpoint(large) {
+            padding-top: rem-calc(10);
+        }
+    }
+
+    .chart-card {
+        display: none;
+        cursor: pointer;
+
+        &.active {
+            display: block;
+        }
+
+        @include breakpoint(large) {
+            display: block;
+        }
+
+        .canvas-wrapper {
+            padding: rem-calc(10 25);
+
+            @include breakpoint(medium) {
+                padding: rem-calc(40 65);
+            }
+
+            @include breakpoint(large) {
+                padding: rem-calc(10 25);
+            }
+        }
+
+        .temp-wrapper {
+            padding: rem-calc(10 0);
+
+            .temp-icon {
+                max-width: rem-calc(56);
+                text-align: right;
+
+                @include breakpoint(large) {
+                    max-width: rem-calc(44);
+                }
+
+                @include breakpoint(xlarge) {
+                    max-width: rem-calc(56);
+                }
+            }
+
+            .temp-info {
+                display: flex;
+                align-items: center;
+
+                p {
+                    font-size: rem-calc(65);
+                    font-weight: 500;
+                    margin: rem-calc(0 10 0 0);
+
+                    @include breakpoint(large) {
+                        font-size: rem-calc(50);
+                    }
+
+                    @include breakpoint(xlarge) {
+                        font-size: rem-calc(65);
+                    }
+
+                    span {
+                        font-size: rem-calc(30);
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+}
 

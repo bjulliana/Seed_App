@@ -53,30 +53,24 @@ board.on('ready', function () {
 
 	tempSensor.on('change', function () {
 		console.log((this.celsius - 10) + '°C', this.fahrenheit + '°F');
+		document.querySelector('.temp-info').innerHTML = '<p>' + this.celsius - 10 + '°<span>C</span></p>';
 	});
 
 	photoSensor.on('change', function () {
-		console.log('Lux: ' + this.scaleTo(0, 100));
 		var lux = this.scaleTo(0, 100);
 		lightChart(lux);
 	});
-
 });
 
 if (board.isConnected === false) {
 	moistureChart(670);
 	lightChart(67);
-	tempChart(25);
+	//tempChart(25);
+    document.querySelector('.temp-info').innerHTML = '<p>24°<span>C</span></p>';
 }
 
 function moistureChart(moisture) {
-	if (moistureChrt) {
-		moistureChrt.destroy();
-	}
-
-	console.log(moisture);
 	var roundMoisture = createRemap(moisture);
-
 	var canvas = document.getElementById('moistureChart');
 	var ctx    = canvas.getContext('2d');
 
@@ -104,6 +98,7 @@ function moistureChart(moisture) {
 			tooltips        : {
 				enabled: false
 			},
+            responsive: true,
 			rotation        : 1 * Math.PI,
 			circumference   : 1 * Math.PI,
 			cutoutPercentage: 65,
@@ -138,7 +133,7 @@ function lightChart(light) {
 	var canvas = document.getElementById('lightChart');
 	var ctx    = canvas.getContext('2d');
 
-	var tempChart = new Chart(ctx, {
+    var tempChart = new Chart(ctx, {
 		type   : 'doughnut',
 		data   : {
 			datasets: [
@@ -162,6 +157,7 @@ function lightChart(light) {
 			tooltips        : {
 				enabled: false
 			},
+            responsive: true,
 			rotation        : 1 * Math.PI,
 			circumference   : 1 * Math.PI,
 			cutoutPercentage: 65,
@@ -187,7 +183,7 @@ function tempChart(temp) {
 	var canvas = document.getElementById('temperatureChart');
 	var ctx    = canvas.getContext('2d');
 
-	var tempChart = new Chart(ctx, {
+    var tempChart = new Chart(ctx, {
 		type   : 'doughnut',
 		data   : {
 			datasets: [
@@ -231,3 +227,12 @@ function tempChart(temp) {
 		}
 	});
 }
+
+//Function to Update Health Status
+var healthStatus = document.querySelector('.health-info');
+
+//function updateStatus(moisture, light, temp) {
+//    console.log(moisture, light, temp);
+//}
+
+
