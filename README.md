@@ -9,7 +9,8 @@ Clone Repo `git clone https://github.com/bjulliana/Seed_App.git`
 Inside the App Root Folder Create a New Branch `git checkout -b [NAME_OF_YOUR_BRANCH]`  
 Run `npm install --global gulp-cli`    
 Run `npm install`    
-Run `gulp watch` to view changes in browser and compile sass  
+Run `gulp watch` to compile sass   
+Run `npm start` to open electron   
 
 ### Command to Merge Master to your Branch after Master Updates   
 Add and Commit all your changes. Make sure there is no uncommited changes on git.
