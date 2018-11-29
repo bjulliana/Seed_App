@@ -1,4 +1,4 @@
-# Seed_App (Working Version with electron@latest)
+# Seed_App
 Seed! A Plant Monitoring App
 
 ## Important
