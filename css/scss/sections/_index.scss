@@ -1,6 +1,24 @@
+body {
+  background-color: #307367;
+  @include breakpoint(medium) {
+  background-color: #fff;
+  }
+}
+
+
+p{
+  font-weight: bold;
+color:#fff;
+  @include breakpoint(medium) {
+ color: set-color('grey-700');
+  }
+}
 
 .loginCon {
  padding: 0;
+
+
+
     .row {
     padding:0;
     }  
@@ -9,48 +27,202 @@
 .left-log  {
   padding: 0;
   margin: 0;
+.bgimg {
+    background-image: url('#{$img-path}/cto-bg2.jpg');
+    height: 100%;
+    min-height: 100vh;
+    background-size: cover;
+}
 }
 
 .right-log {
-    height:60px;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; 
+  width: 70%; 
+   @include breakpoint(medium) {
+  justify-content: space-around; 
+  width: 57%; 
+  }
+   @include breakpoint(large) {
+  justify-content: flex-end; 
+  width: 41%;     
+  }
 }
 
+.whiteLogo {
+  margin-top: 80px;
+  width:150px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
 .vertical-logo img {
-margin-top: 150px;
-width:100px; 
+  margin-top: 80px;
+  width:100px; 
   @include breakpoint(large) {
-  width:150px;        }
+  width:150px;       
+  }
 }
 
 .checkbox {
   font-weight: normal;
   margin-top: auto;
   margin-bottom: auto;
-  grid-column: 3/6;
+  @include breakpoint(medium) {
+ color: set-color('grey-700');
+     }
 }  
 
 .link {
   font-weight: normal;
   margin-top: auto;
   margin-bottom: auto;
-  font-weight: none;
-  grid-column: 2/4;
-} 
-.button-white {
-border: 3px solid #307367;
-background: transparent;
-color: #307367; 
-margin-left: 20px;
-width: 180px;
+   color: #fff;
+  @include breakpoint(medium) {
+ color: set-color('grey-700');
+     }
+ }
+.register {
+  .column-small-6{
+width: 27%;    
+padding: 0rem;
   }
+}
+.button-white {
+ border: 3px solid #307367;
+background: white;
+color: #307367; 
+ height: 50px;
+ width:180px;
 
-.button-green {
-margin-right: 20px;
-width: 180px;
+  @include breakpoint(medium) {
+  width: 160px; 
+margin-left: 8px;
+}
+  
+  @include breakpoint(large) {
+   width: 180px;
+   margin-left: 8px;
+
+  } 
 }
 
-.privacytxt p{
-margin-top: 100px;
-margin-bottom: 5px;
-  }
+.button-blue {
+ height: 50px;
+ width: 190px;
+
+  @include breakpoint(small){
+    background: white;
+    color: #307367; }
+  
+  @include breakpoint(medium) {   
+    height: 50px;
+    width: 160px;
+    margin-right: 8px;
+
+@include breakpoint(large) {
+   width: 180px;
+   height: 50px;
+   margin-right: 8px;
+
+
+    }
+}
+}
+
+input[type='username'],
+input[type='password'],
+textarea {
+    display: block;
+    transition: 0.3s ease-in-out;
+    outline: 0;
+    border-bottom: 1px solid rgba(set-color('black'), 0.3);
+    background: transparent;
+    padding: rem-calc(15 0);
+    max-width: 100%;
+    vertical-align: middle;
+    color: set-color('grey-900');
+    font-family: $secondary-font;
+    font-size: rem-calc(16);
+}
+
+.loginForm {
+ margin-top: 0;
+    margin-bottom: rem-calc(30);
+ .form-field-check {
+  display: flex;
+  justify-content: space-evenly;
+  color: #fff;
+  
+ }
+
+//     .form-field {
+//         position: relative;
+//         display: flex;
+
+//         .input {
+//             margin-bottom: 0;
+//             border: 0;
+//             border-bottom: 1px solid rgba(set-color('white'), 0.3);
+//             padding: rem-calc(40 10 10 10);
+//             background-color:#307367;
+//             color:#fff;
+    
+//             width: 65%;
+//             margin-left: auto;
+//             margin-right: auto;
+//             @include breakpoint(medium) { 
+//             color: rgba(set-color('grey-900'), 0.7);
+//             background-color: #fff;
+//             border-bottom: 1px solid rgba(16, 16, 16, 0.3)
+
+//             }
+//             @include breakpoint(large) { 
+//             color: rgba(set-color('grey-900'), 0.7);
+//             background-color: #fff;
+//             }
+
+//                     }
+//                   }
+//               }
+          
+// .label {
+
+//                     left: 0;
+//                     transform: translateY(-30px);
+//                     text-transform: uppercase;
+//                     color: set-color('accent-1');
+//                     font-size: rem-calc(12);
+//                     font-weight: 700;
+//                       color:#fff;
+
+
+  
+//     @include breakpoint(medium) { 
+//       padding-left: rem-calc(70);
+//       color: #000000;
+//       color: set-color('grey-700');
+//       font-weight: 300;
+//       position: absolute;
+
+//     }
+//     @include breakpoint(large) { 
+//     padding-left: rem-calc(90);
+//     color: #000000;
+//     color: set-color('grey-700');
+//     font-weight: 300;
+
+
+//   }
+}
+
+.register p {
+font-size: rem-calc(10);
+@include breakpoint(medium) {   
+font-size: rem-calc(12);
+
+
+}
+}

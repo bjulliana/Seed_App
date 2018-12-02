@@ -1032,6 +1032,30 @@ input[type='button'] {
     width: 100%;
     line-height: 3.125rem;
     font-size: 1rem; }
+  button.button-blue,
+  .button.button-blue,
+  a.button.button-blue,
+  input[type='submit'].button-blue,
+  input[type='button'].button-blue {
+    background: #0D3E63;
+    color: #fff;
+    font-size: 0.625rem;
+    letter-spacing: 0.0625rem;
+    border: none;
+    text-align: right;
+    background-image: url("../images/facebook.svg");
+    background-repeat: no-repeat;
+    background-position: 2% 50%; }
+    button.button-blue:hover, button.button-blue:focus,
+    .button.button-blue:hover,
+    .button.button-blue:focus,
+    a.button.button-blue:hover,
+    a.button.button-blue:focus,
+    input[type='submit'].button-blue:hover,
+    input[type='submit'].button-blue:focus,
+    input[type='button'].button-blue:hover,
+    input[type='button'].button-blue:focus {
+      background-color: #ffffff; }
 
 .image-container {
   z-index: 1; }
@@ -2356,6 +2380,19 @@ input[type='button'] {
   .search-mobile {
     display: none; } }
 
+body {
+  background-color: #307367; }
+  @media screen and (min-width: 600px) {
+    body {
+      background-color: #fff; } }
+
+p {
+  font-weight: bold;
+  color: #fff; }
+  @media screen and (min-width: 600px) {
+    p {
+      color: #3c3c3c; } }
+
 .loginCon {
   padding: 0; }
   .loginCon .row {
@@ -2364,14 +2401,43 @@ input[type='button'] {
 .left-log {
   padding: 0;
   margin: 0; }
+  .left-log .bgimg {
+    background-image: url("../images/cto-bg2.jpg");
+    height: 100%;
+    min-height: 100vh;
+    background-size: cover; }
 
 .right-log {
-  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -ms-flex-pack: distribute;
-  justify-content: space-around; }
+  justify-content: space-around;
+  width: 70%; }
+  @media screen and (min-width: 600px) {
+    .right-log {
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+      width: 57%; } }
+  @media screen and (min-width: 900px) {
+    .right-log {
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+      width: 41%; } }
+
+.whiteLogo {
+  margin-top: 80px;
+  width: 150px;
+  margin-right: auto;
+  margin-left: auto; }
 
 .vertical-logo img {
-  margin-top: 150px;
+  margin-top: 80px;
   width: 100px; }
   @media screen and (min-width: 900px) {
     .vertical-logo img {
@@ -2380,27 +2446,85 @@ input[type='button'] {
 .checkbox {
   font-weight: normal;
   margin-top: auto;
-  margin-bottom: auto;
-  grid-column: 3/6; }
+  margin-bottom: auto; }
+  @media screen and (min-width: 600px) {
+    .checkbox {
+      color: #3c3c3c; } }
 
 .link {
   font-weight: normal;
   margin-top: auto;
   margin-bottom: auto;
-  font-weight: none;
-  grid-column: 2/4; }
+  color: #fff; }
+  @media screen and (min-width: 600px) {
+    .link {
+      color: #3c3c3c; } }
+
+.register .column-small-6 {
+  width: 27%;
+  padding: 0rem; }
 
 .button-white {
   border: 3px solid #307367;
-  background: transparent;
+  background: white;
   color: #307367;
-  margin-left: 20px;
+  height: 50px;
   width: 180px; }
+  @media screen and (min-width: 600px) {
+    .button-white {
+      width: 160px;
+      margin-left: 8px; } }
+  @media screen and (min-width: 900px) {
+    .button-white {
+      width: 180px;
+      margin-left: 8px; } }
 
-.button-green {
-  margin-right: 20px;
-  width: 180px; }
+.button-blue {
+  height: 50px;
+  width: 190px;
+  background: white;
+  color: #307367; }
+  @media screen and (min-width: 600px) {
+    .button-blue {
+      height: 50px;
+      width: 160px;
+      margin-right: 8px; } }
+  @media screen and (min-width: 600px) and (min-width: 900px) {
+    .button-blue {
+      width: 180px;
+      height: 50px;
+      margin-right: 8px; } }
 
-.privacytxt p {
-  margin-top: 100px;
-  margin-bottom: 5px; }
+input[type='username'],
+input[type='password'],
+textarea {
+  display: block;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  outline: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  background: transparent;
+  padding: 0.9375rem 0;
+  max-width: 100%;
+  vertical-align: middle;
+  color: #101010;
+  font-family: "Lato", Arial, sans-serif;
+  font-size: 1rem; }
+
+.loginForm {
+  margin-top: 0;
+  margin-bottom: 1.875rem; }
+  .loginForm .form-field-check {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    color: #fff; }
+
+.register p {
+  font-size: 0.625rem; }
+  @media screen and (min-width: 600px) {
+    .register p {
+      font-size: 0.75rem; } }

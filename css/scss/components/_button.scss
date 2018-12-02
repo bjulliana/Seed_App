@@ -81,4 +81,23 @@ input[type='button'] {
         line-height: rem-calc(50);
         font-size: rem-calc(16);
     }
+
+     &.button-blue {
+        background: #0D3E63;
+        color:#fff;
+        font-size: rem-calc(10);
+        letter-spacing: rem-calc(1);
+        border:none;
+        text-align: right;
+        background-image: url('#{$img-path}/facebook.svg');
+        background-repeat: no-repeat;
+        background-position: 2% 50%;
+  
+
+        &:hover,
+        &:focus {
+            background-color: set-color('white');
+        }
+    }
+
 }
