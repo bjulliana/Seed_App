@@ -1214,6 +1214,64 @@ input[type='button'] {
       font-size: 0.875rem;
       line-height: 1.5; }
 
+.edit {
+  background-color: #800080;
+  border: none;
+  color: white;
+  width: 190px;
+  margin: none;
+  aling-self: baseline; }
+
+.details {
+  background-color: #2b655b;
+  border: none;
+  color: white;
+  aling-self: baseline;
+  margin: none;
+  width: 190px; }
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 400px;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding: none; }
+
+.plant-container {
+  margin: none; }
+
+.plant-container__detail {
+  background-color: #fff; }
+
+.buttoncard {
+  display-flex: row; }
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 400px;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  aling-self: baseline; }
+
+plant-container__image {
+  margin: none; }
+
+.column-small-3 column-large-3 {
+  padding-top: 25px; }
+
+.card {
+  padding-top: 50px; }
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
 .styleguide {
   margin: 5rem 0; }
   .styleguide .container {
