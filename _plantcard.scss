@@ -1,0 +1,74 @@
+
+.edit 
+	{
+    background-color: #800080; 
+    border: none;
+    color: white;
+    width:190px;
+    margin:none;
+    aling-self:baseline;
+}
+
+.details{
+	
+    background-color: #2b655b; 
+    border: none;
+    color: white;
+    aling-self: baseline;
+    margin:none;
+    width:190px;
+}
+
+.card{
+	display: flex;
+	width:400px; 
+	justify-content:flex-start;
+	
+	padding:none;
+}
+
+.plant-container {
+	margin: none; 
+
+}
+
+.plant-container__detail {
+	background-color: #fff;
+}
+
+.buttoncard {
+	display-flex: row;
+}
+
+.row {
+    display: flex;
+	width:400px; 
+	justify-content:flex-start;
+	aling-self: baseline;
+
+}
+
+plant-container__image{
+	margin:none;
+}
+.column-large-6 {
+	
+}
+
+.column-small-3 column-large-3 {
+	padding-top: 25px;
+}
+
+.card {
+	padding-top: 50px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+
+
+
