@@ -982,6 +982,12 @@ input[type='button'] {
       border: 3px solid #ffffff;
       background-color: transparent;
       color: #ffffff; }
+  button.button-green,
+  .button.button-green,
+  a.button.button-green,
+  input[type='submit'].button-green,
+  input[type='button'].button-green {
+    width: 200px; }
   button.stroke-white,
   .button.stroke-white,
   a.button.stroke-white,
@@ -1045,6 +1051,7 @@ input[type='button'] {
     font-size: 0.625rem;
     letter-spacing: 0.0625rem;
     border: none;
+    widows: 200px;
     text-align: right;
     background-image: url("../images/facebook.svg");
     background-repeat: no-repeat;
@@ -2375,7 +2382,7 @@ input[type='button'] {
 
 .login {
   background-color: #307367; }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 900px) {
     .login {
       background-color: #fff; } }
 
@@ -2400,24 +2407,21 @@ input[type='button'] {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column; }
-  .right-log .center-content {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center; }
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .right-log .whiteLogo {
+    width: 150px;
+    margin-right: auto;
+    margin-left: auto; }
+  .right-log .vertical-logo img {
+    width: 150px; }
 
-.whiteLogo {
-  margin-top: 80px;
-  width: 150px;
-  margin-right: auto;
-  margin-left: auto; }
-
-.vertical-logo img {
-  margin-top: 80px;
-  width: 100px; }
-  @media screen and (min-width: 900px) {
-    .vertical-logo img {
-      width: 150px; } }
+.welcome {
+  font-size: 1.25rem;
+  color: #3c3c3c;
+  font-weight: regular; }
 
 .checkbox {
   font-weight: normal;
@@ -2451,6 +2455,10 @@ input[type='password'],
     -ms-flex-pack: space-evenly;
     justify-content: space-evenly;
     color: #fff; }
+  input[type='username'] .greenBut .button,
+  input[type='password'] .greenBut .button,
+  .loginForm .greenBut .button {
+    width: 200px; }
 
 .register {
   font-size: 0.6875rem;

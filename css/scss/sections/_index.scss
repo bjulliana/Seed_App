@@ -1,6 +1,6 @@
 .login {
-  background-color: #307367;
-  @include breakpoint(medium) {
+  background-color: set-color('accent-1');
+  @include breakpoint(large) {
   background-color: #fff;
   }
 }
@@ -16,57 +16,58 @@
 .left-log {
   padding: 0;
   margin: 0;
+  opacity: 0.55;
+  z-index: 1;
+  background-color: set-color('accent-1');
+
     .bgimg {
     background-image: url('#{$img-path}/cto-bg2.jpg');
+    width: 100%;
     height: 100%;
     min-height: 100vh;
     background-size: cover;
     }
+
+   
 }
+
 
 .right-log {
 display: flex;
 flex-direction: column;
-    .center-content{
-    justify-content: center;
-    }
+justify-content: center;
+
+         .whiteLogo {
+          width:150px;
+          margin-right: auto;
+          margin-left: auto;
+          
+          }
+          .vertical-logo img {
+          width:150px; 
+          }
 }
 
-.whiteLogo {
-margin-top: 80px;
-width:150px;
-margin-right: auto;
-margin-left: auto;
-}
 
-
-.vertical-logo img {
-  margin-top: 80px;
-  width:100px; 
-    @include breakpoint(large) {
-    width:150px;       
-    }
+.welcome{
+    font-size: rem-calc(20);
+    color: set-color('grey-700');
+    font-weight: 300;
 }
 
 .checkbox {
-font-weight: normal;
-margin-top: auto;
-margin-bottom: auto;
-    @include breakpoint(medium) {
-    color: set-color('grey-700');
-    }
+color: set-color('grey-700');
+font-weight: 300;
+
+    
 }  
 
-.link 
-{
-font-weight: normal;
+.link{
 margin-top: auto;
 margin-bottom: auto;
-color: #fff;
-      @include breakpoint(medium) 
-      {
-      color: set-color('grey-700');
-      }
+font-weight: 300;  
+font-weight: normal;
+
 }
 
 
@@ -76,74 +77,8 @@ input[type='password'],
 
 .loginForm {
  margin-top: 0;
-  margin-bottom: rem-calc(30);
-    .form-field-check {
-    display: flex;
-    justify-content: space-evenly;
-    color: #fff;
- }
-
-//     .form-field {
-//         position: relative;
-//         display: flex;
-
-//         .input {
-//             margin-bottom: 0;
-//             border: 0;
-//             border-bottom: 1px solid rgba(set-color('white'), 0.3);
-//             padding: rem-calc(40 10 10 10);
-//             background-color:#307367;
-//             color:#fff;
-    
-//             width: 65%;
-//             margin-left: auto;
-//             margin-right: auto;
-//             @include breakpoint(medium) { 
-//             color: rgba(set-color('grey-900'), 0.7);
-//             background-color: #fff;
-//             border-bottom: 1px solid rgba(16, 16, 16, 0.3)
-
-//             }
-//             @include breakpoint(large) { 
-//             color: rgba(set-color('grey-900'), 0.7);
-//             background-color: #fff;
-//             }
-
-//                     }
-//                   }
-//               }
-          
-// .label {
-
-//                     left: 0;
-//                     transform: translateY(-30px);
-//                     text-transform: uppercase;
-//                     color: set-color('accent-1');
-//                     font-size: rem-calc(12);
-//                     font-weight: 700;
-//                       color:#fff;
-
-
-  
-//     @include breakpoint(medium) { 
-//       padding-left: rem-calc(70);
-//       color: #000000;
-//       color: set-color('grey-700');
-//       font-weight: 300;
-//       position: absolute;
-
-//     }
-//     @include breakpoint(large) { 
-//     padding-left: rem-calc(90);
-//     color: #000000;
-//     color: set-color('grey-700');
-//     font-weight: 300;
-
-
-//   }
-}
-
-
+ margin-bottom: rem-calc(30);
+   
 
 .register
 {
@@ -152,19 +87,14 @@ text-decoration: underline;
 padding-left: 5px;
 font-weight: bold;
 color:#fff;
-  @include breakpoint(large) {
-  color: set-color('grey-700');
-  font-weight: regular;
-  }
+
 }
 .newUser
 {
 font-size: rem-calc(11);
 font-weight: bold;
 color:#fff;
-    @include breakpoint(large) {
-    color: set-color('grey-700');
-    font-weight: regular;
+ 
     }
 }
 
