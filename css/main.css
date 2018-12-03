@@ -1037,15 +1037,18 @@ input[type='button'] {
   a.button.button-blue,
   input[type='submit'].button-blue,
   input[type='button'].button-blue {
+    display: block;
     background: #0D3E63;
+    height: 3.375rem;
     color: #fff;
+    line-height: 3rem;
     font-size: 0.625rem;
     letter-spacing: 0.0625rem;
     border: none;
     text-align: right;
     background-image: url("../images/facebook.svg");
     background-repeat: no-repeat;
-    background-position: 2% 50%; }
+    background-position: 0% 50%; }
 
 .image-container {
   z-index: 1; }
@@ -2404,18 +2407,11 @@ p {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-pack: distribute;
-  justify-content: space-around; }
-  @media screen and (min-width: 600px) {
-    .right-log {
-      -ms-flex-pack: distribute;
-      justify-content: space-around; } }
-  @media screen and (min-width: 900px) {
-    .right-log {
-      -webkit-box-pack: end;
-      -ms-flex-pack: end;
-      justify-content: flex-end; } }
+  flex-direction: column; }
+  .right-log .center-content {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
 
 .whiteLogo {
   margin-top: 80px;
@@ -2451,37 +2447,6 @@ p {
   width: 27%;
   padding: 0rem; }
 
-.button-white {
-  border: 3px solid #307367;
-  background: white;
-  color: #307367;
-  height: 50px;
-  width: 180px; }
-  @media screen and (min-width: 600px) {
-    .button-white {
-      width: 160px;
-      margin-left: 8px; } }
-  @media screen and (min-width: 900px) {
-    .button-white {
-      width: 180px;
-      margin-left: 8px; } }
-
-.button-blue {
-  height: 50px;
-  width: 190px;
-  background: white;
-  color: #307367; }
-  @media screen and (min-width: 600px) {
-    .button-blue {
-      height: 50px;
-      width: 160px;
-      margin-right: 8px; } }
-  @media screen and (min-width: 600px) and (min-width: 900px) {
-    .button-blue {
-      width: 180px;
-      height: 50px;
-      margin-right: 8px; } }
-
 input[type='username'],
 input[type='password'],
 .loginForm {
@@ -2505,4 +2470,14 @@ input[type='password'],
       font-size: 0.75rem; } }
 
 .privacytxt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   font-size: 0.75rem; }

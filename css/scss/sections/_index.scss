@@ -22,6 +22,8 @@ color:#fff;
     .row {
     padding:0;
     }  
+
+
 }
 
 .left-log  {
@@ -38,13 +40,10 @@ color:#fff;
 .right-log {
   display: flex;
   flex-direction: column;
-  justify-content: space-around; 
-   @include breakpoint(medium) {
-  justify-content: space-around; 
-  }
-   @include breakpoint(large) {
-  justify-content: flex-end; 
-  }
+    .center-content{
+      justify-content: center;
+    }
+
 }
 
 .whiteLogo {
@@ -87,47 +86,8 @@ width: 27%;
 padding: 0rem;
   }
 }
-.button-white {
- border: 3px solid #307367;
-background: white;
-color: #307367; 
- height: 50px;
- width:180px;
-
-  @include breakpoint(medium) {
-  width: 160px; 
-margin-left: 8px;
-}
-  
-  @include breakpoint(large) {
-   width: 180px;
-   margin-left: 8px;
-
-  } 
-}
-
-.button-blue {
- height: 50px;
- width: 190px;
-
-  @include breakpoint(small){
-    background: white;
-    color: #307367; }
-  
-  @include breakpoint(medium) {   
-    height: 50px;
-    width: 160px;
-    margin-right: 8px;
-
-@include breakpoint(large) {
-   width: 180px;
-   height: 50px;
-   margin-right: 8px;
 
 
-    }
-}
-}
 
 input[type='username'],
 input[type='password'],
@@ -213,6 +173,9 @@ font-size: rem-calc(12);
 }
 .privacytxt
 {
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
 font-size: rem-calc(12);
 
 }
