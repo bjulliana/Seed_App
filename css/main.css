@@ -1046,16 +1046,6 @@ input[type='button'] {
     background-image: url("../images/facebook.svg");
     background-repeat: no-repeat;
     background-position: 2% 50%; }
-    button.button-blue:hover, button.button-blue:focus,
-    .button.button-blue:hover,
-    .button.button-blue:focus,
-    a.button.button-blue:hover,
-    a.button.button-blue:focus,
-    input[type='submit'].button-blue:hover,
-    input[type='submit'].button-blue:focus,
-    input[type='button'].button-blue:hover,
-    input[type='button'].button-blue:focus {
-      background-color: #ffffff; }
 
 .image-container {
   z-index: 1; }
