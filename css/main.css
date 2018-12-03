@@ -2494,23 +2494,11 @@ p {
 
 input[type='username'],
 input[type='password'],
-textarea {
-  display: block;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-  outline: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-  background: transparent;
-  padding: 0.9375rem 0;
-  max-width: 100%;
-  vertical-align: middle;
-  color: #101010;
-  font-family: "Lato", Arial, sans-serif;
-  font-size: 1rem; }
-
 .loginForm {
   margin-top: 0;
   margin-bottom: 1.875rem; }
+  input[type='username'] .form-field-check,
+  input[type='password'] .form-field-check,
   .loginForm .form-field-check {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2525,3 +2513,6 @@ textarea {
   @media screen and (min-width: 600px) {
     .register p {
       font-size: 0.75rem; } }
+
+.privacytxt {
+  font-size: 0.75rem; }
