@@ -39,14 +39,11 @@ color:#fff;
   display: flex;
   flex-direction: column;
   justify-content: space-around; 
-  width: 70%; 
    @include breakpoint(medium) {
   justify-content: space-around; 
-  width: 57%; 
   }
    @include breakpoint(large) {
   justify-content: flex-end; 
-  width: 41%;     
   }
 }
 
