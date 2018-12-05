@@ -25,7 +25,6 @@
         let lat  = '42.9487956';
         let long = '-81.3887021';
         let url  = 'https://api.darksky.net/forecast/' + key + '/' + lat + ',' + long + '?units=ca&exclude=minutely,hourly,alerts';
-        console.log(url);
         request.onreadystatechange = stateChangedJSON;
         request.open('GET', url);
         request.send(null);
@@ -35,7 +34,6 @@
         if (request.readyState === 4 && request.status === 200) {
             forecast.innerHTML = '';
             var data           = JSON.parse(request.responseText);
-            console.log(data);
 
             date.innerHTML   = timeConverter(data.daily.data[0].time);
             temp.innerHTML   = Math.floor(data.currently.temperature) + 'º<span>' + Math.floor(data.daily.data[0].temperatureMax) + 'º</span><span>' + Math.floor(data.daily.data[0].temperatureMin) + 'º</span>';

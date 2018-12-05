@@ -21,26 +21,72 @@
         return process.__stdin;
     });
 
-    var board    = new five.Board();
-    var valueDiv = document.querySelector('#plantValue');
+    var board = new five.Board();
+
+    class PlantState {
+        constructor(temperature, light, moisture) {
+            this.temperature = temperature;
+            this.light       = light;
+            this.moisture    = moisture;
+        }
+
+        plantStatus(plantData) {
+            this.temperature = plantData.temperature;
+            this.light       = plantData.light;
+            this.moisture    = plantData.moisture;
+        }
+    }
+
+    PlantState.prototype.updateStatus = function () {
+        console.log(this);
+        //console.log(this, this.moisture < 10);
+        //console.log(this.temperature < 10);
+        //console.log(this.light < 10);
+
+        if ((this.moisture < 10) && (this.temperature < 10)) {
+            console.log('bad');
+            //status.innerHTML = 'Poor';
+            //status.className = '';
+            //status.classList.add('health-poor', 'health-info');
+            //} else if ((this.temperature < 10) || (this.light < 10) || (this.moisture < 10)) {
+            //    console.log('nah');
+            //} else if ((this.temperature > 18) && (this.light > 50) && (this.moisture > 50)) {
+            //    console.log('good');
+        }
+
+    };
+
+    //PlantState.prototype.update = function () {
+    //    console.log(this.temperature)
+    //};
 
     board.on('ready', function () {
         var moistureSensor = new five.Sensor({
             pin      : 'A0',
-            freq     : 250,
-            threshold: 2
+            freq     : 2000,
+            threshold: 50,
+            custom   : {
+                value: ''
+            }
         });
 
         var tempSensor = new five.Thermometer({
             controller: 'LM35',
             pin       : 'A3',
-            freq      : 250
+            freq      : 2000,
+            threshold : 3,
+            custom    : {
+                value: ''
+            }
         });
 
         var photoSensor = new five.Sensor({
             pin      : 'A5',
-            freq     : 250,
-            threshold: 50
+            freq     : 2000,
+            threshold: 50,
+            custom   : {
+                value: ''
+            }
         });
 
         board.repl.inject({
@@ -48,35 +94,87 @@
         });
 
         moistureSensor.on('change', function () {
-            var sensorInfo = this.value;
-            //console.log(this.value);
-            moistureChart(sensorInfo);
+            var moisture      = this.value;
+            var test          = this.scaleTo(100, 0);
+            this.custom.value = test;
+            plantState.plantStatus({
+                moisture: test
+            });
+            moistureChart(test);
+            updateStatus();
         });
 
         tempSensor.on('change', function () {
-            var temp = this.celsius - 10;
+            var temp          = this.celsius - 10;
+            this.custom.value = temp;
+            plantState.plantStatus({
+                temperature: 5
+            });
             document.querySelector('.temp-info').innerHTML = '<p>' + temp + '°<span>C</span></p>';
+            updateStatus();
         });
 
         photoSensor.on('change', function () {
-            var lux = this.scaleTo(0, 100);
+            var lux           = this.scaleTo(0, 100);
+            this.custom.value = lux;
             //console.log(lux);
+            plantState.plantStatus({
+                light: lux
+            });
             lightChart(lux);
-            return lux;
+            updateStatus();
         });
 
-        console.log(tempSensor);
-        console.log(tempSensor.celsius);
+        const plantState = new PlantState({
+            moisture   : moistureSensor.value,
+            light      : photoSensor.value,
+            temperature: tempSensor.celsius
+        });
+
+        function updateStatus() {
+            let temperature = tempSensor.custom.value,
+                light       = photoSensor.custom.value,
+                moisture    = moistureSensor.custom.value,
+                status      = document.querySelector('.health-info');
+            //
+            //console.log('temp: ' + temperature);
+            //console.log('light: ' + light);
+            //console.log('moisture: ' + moisture);
+            //console.log(moistureSensor);
+
+            if (moisture !== '' && light !== '' && temperature !== '') {
+                console.log('temp: ' + temperature);
+                console.log('light: ' + light);
+                console.log('moisture: ' + moisture);
+
+                if ((moisture < 10 && temperature < 10) ||
+                    (moisture < 10 && light < 10) ||
+                    (temperature < 10 && light < 10)) {
+                    status.innerHTML = 'Poor';
+                    status.className = '';
+                    status.classList.add('health-poor', 'health-info');
+                } else if ((temperature < 17) || (light < 39) || (moisture < 39)) {
+                    status.innerHTML = 'Fair';
+                    status.className = '';
+                    status.classList.add('health-average', 'health-info');
+                } else if (temperature > 18 && light > 40 && moisture > 40) {
+                    status.innerHTML = 'Good';
+                    status.className = '';
+                    status.classList.add('health-good', 'health-info');
+                }
+            }
+        }
     });
 
     if (board.isConnected === false) {
-        moistureChart(670);
+        moistureChart(40);
         lightChart(67);
         document.querySelector('.temp-info').innerHTML = '<p>24°<span>C</span></p>';
     }
 
     function moistureChart(moisture) {
-        var roundMoisture = createRemap(moisture);
+        //var roundMoisture = createRemap(moisture);
+        var roundMoisture = moisture;
         var canvas        = document.getElementById('moistureChart');
         var ctx           = canvas.getContext('2d');
 
@@ -183,8 +281,5 @@
             }
         });
     }
-
-//Function to Update Health Status
-    var healthStatus = document.querySelector('.health-info');
 
 })();
