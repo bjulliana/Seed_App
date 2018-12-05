@@ -982,12 +982,6 @@ input[type='button'] {
       border: 3px solid #ffffff;
       background-color: transparent;
       color: #ffffff; }
-  button.button-green,
-  .button.button-green,
-  a.button.button-green,
-  input[type='submit'].button-green,
-  input[type='button'].button-green {
-    width: 200px; }
   button.stroke-white,
   .button.stroke-white,
   a.button.stroke-white,
@@ -1047,15 +1041,12 @@ input[type='button'] {
     background: #0D3E63;
     height: 3.375rem;
     color: #fff;
-    line-height: 3rem;
-    font-size: 0.625rem;
+    text-transform: none;
+    line-height: 1.75rem;
     letter-spacing: 0.0625rem;
-    border: none;
-    widows: 200px;
-    text-align: right;
+    border: 3px solid #0D3E63;
     background-image: url("../images/facebook.svg");
-    background-repeat: no-repeat;
-    background-position: 0% 50%; }
+    background-repeat: no-repeat; }
 
 .image-container {
   z-index: 1; }
@@ -2385,116 +2376,159 @@ input[type='button'] {
   @media screen and (min-width: 900px) {
     .login {
       background-color: #fff; } }
-
-.loginCon {
-  padding: 0; }
-  .loginCon .row {
+  .login .loginCon {
     padding: 0; }
-
-.left-log {
-  padding: 0;
-  margin: 0; }
-  .left-log .bgimg {
-    background-image: url("../images/cto-bg2.jpg");
+    .login .loginCon .loginWrapper, .login .loginCon .row {
+      padding: 0;
+      max-width: none; }
+    .login .loginCon .loginWrapper {
+      height: 100vh; }
+  .login .left-log {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    z-index: 1;
+    background-color: #307367; }
+    .login .left-log .bgimg {
+      background-image: url("../images/cto-bg2.jpg");
+      width: 100%;
+      height: 100%;
+      min-height: 100vh;
+      background-size: cover; }
+  .login .overlay {
+    position: absolute;
+    opacity: 0.55;
     height: 100%;
-    min-height: 100vh;
-    background-size: cover; }
-
-.right-log {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
-  .right-log .whiteLogo {
-    width: 150px;
-    margin-right: auto;
-    margin-left: auto; }
-  .right-log .vertical-logo img {
-    width: 150px; }
-
-.welcome {
-  font-size: 1.25rem;
-  color: #3c3c3c;
-  font-weight: regular; }
-
-.checkbox {
-  font-weight: normal;
-  margin-top: auto;
-  margin-bottom: auto; }
-  @media screen and (min-width: 600px) {
-    .checkbox {
-      color: #3c3c3c; } }
-
-.link {
-  font-weight: normal;
-  margin-top: auto;
-  margin-bottom: auto;
-  color: #fff; }
-  @media screen and (min-width: 600px) {
-    .link {
-      color: #3c3c3c; } }
-
-input[type='username'],
-input[type='password'],
-.loginForm {
-  margin-top: 0;
-  margin-bottom: 1.875rem; }
-  input[type='username'] .form-field-check,
-  input[type='password'] .form-field-check,
-  .loginForm .form-field-check {
+    width: 100%;
+    background-color: #14483a; }
+  .login .right-log {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: space-evenly;
-    -ms-flex-pack: space-evenly;
-    justify-content: space-evenly;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .login .right-log .whiteLogo img {
+      width: 130px; }
+    .login .right-log .vertical-logo img {
+      width: 130px; }
+  .login .welcome {
+    font-size: 0.875rem;
+    margin-bottom: 0px; }
+    @media screen and (min-width: 1200px) {
+      .login .welcome {
+        font-size: 1.0625rem;
+        color: #3c3c3c;
+        font-weight: 300; } }
+  .login .checkbox {
+    color: #3c3c3c;
+    font-weight: 300;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 0.875rem; }
+  .login .link a {
+    font-size: 0.875rem;
+    margin-bottom: auto;
+    font-weight: 300; }
+  .login .link2 a {
+    font-weight: 900;
+    font-size: 0.75rem;
+    color: #ffffff;
+    text-align: center; }
+  .login input[type='username'],
+  .login input[type='password'],
+  .login .loginForm {
+    margin-top: 0;
+    margin-bottom: 0.625rem; }
+    .login input[type='username'] .userWrapper,
+    .login input[type='password'] .userWrapper,
+    .login .loginForm .userWrapper {
+      text-align: left;
+      padding-top: 0; }
+    .login input[type='username'] .form-field,
+    .login input[type='password'] .form-field,
+    .login .loginForm .form-field {
+      position: relative; }
+      .login input[type='username'] .form-field .input-field,
+      .login input[type='password'] .form-field .input-field,
+      .login .loginForm .form-field .input-field {
+        margin-bottom: 0;
+        border: 0;
+        background-color: transparent;
+        padding: 2.5rem 0.625rem 0.625rem 0.625rem;
+        width: 100%;
+        color: rgba(255, 255, 255, 0.7);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.9); }
+        @media screen and (min-width: 900px) {
+          .login input[type='username'] .form-field .input-field,
+          .login input[type='password'] .form-field .input-field,
+          .login .loginForm .form-field .input-field {
+            color: rgba(16, 16, 16, 0.7);
+            border-bottom: 1px solid rgba(16, 16, 16, 0.3); } }
+      .login input[type='username'] .form-field .lnr,
+      .login input[type='password'] .form-field .lnr,
+      .login .loginForm .form-field .lnr {
+        color: #ffffff; }
+      .login input[type='username'] .form-field .label,
+      .login input[type='password'] .form-field .label,
+      .login .loginForm .form-field .label {
+        position: absolute;
+        top: 1.875rem;
+        -webkit-transition: 0.2s ease-in-out;
+        transition: 0.2s ease-in-out;
+        cursor: text;
+        padding-left: 0.625rem;
+        width: 100%;
+        font-family: "Lato", Arial, sans-serif;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #ffffff; }
+        @media screen and (min-width: 900px) {
+          .login input[type='username'] .form-field .label,
+          .login input[type='password'] .form-field .label,
+          .login .loginForm .form-field .label {
+            font-weight: 300;
+            color: #3c3c3c; } }
+  .login .register {
+    font-size: 0.6875rem;
+    text-decoration: underline;
+    padding-left: 5px;
+    font-weight: bold;
+    padding-top: 0;
+    padding-bottom: 0;
     color: #fff; }
-  input[type='username'] .greenBut .button,
-  input[type='password'] .greenBut .button,
-  .loginForm .greenBut .button {
-    width: 200px; }
-
-.register {
-  font-size: 0.6875rem;
-  text-decoration: underline;
-  padding-left: 5px;
-  font-weight: bold;
-  color: #fff; }
-  @media screen and (min-width: 900px) {
-    .register {
-      color: #3c3c3c;
-      font-weight: regular; } }
-
-.newUser {
-  font-size: 0.6875rem;
-  font-weight: bold;
-  color: #fff; }
-  @media screen and (min-width: 900px) {
-    .newUser {
-      color: #3c3c3c;
-      font-weight: regular; } }
-
-.privacytxt {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  font-size: 0.75rem;
-  font-weight: bold;
-  color: #fff; }
-  @media screen and (min-width: 900px) {
-    .privacytxt {
-      color: #3c3c3c;
-      font-weight: regular; } }
+  .login .newUser {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 0.6875rem;
+    font-weight: bold;
+    color: #fff; }
+  .login .button, .login .button-green, .login .button-blue, .login .button-alt {
+    margin: 0;
+    width: 100%; }
+  .login .button-blue {
+    padding: 0;
+    text-align: center;
+    font-size: 0.75rem;
+    background-position: 5% 50%; }
+    @media screen and (min-width: 900px) {
+      .login .button-blue {
+        font-size: 0.8125rem;
+        background-position: 5% 50%; } }
+    @media screen and (min-width: 1200px) {
+      .login .button-blue {
+        font-size: 0.75rem; } }
+  .login .privacytxt {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #fff; }
+    @media screen and (min-width: 900px) {
+      .login .privacytxt {
+        color: #3c3c3c;
+        font-weight: normal;
+        font-size: 0.875rem; } }

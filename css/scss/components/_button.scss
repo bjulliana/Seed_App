@@ -48,16 +48,6 @@ input[type='button'] {
         }
     }
 
-    &.button.button-alt2 {
-
-        width: 100%;
-
-    }
-
-    &.button-green {
-        width: 100%;
-    }
-
     &.stroke-white {
         border: 3px solid set-color('white');
         background: transparent;
@@ -97,18 +87,13 @@ input[type='button'] {
         background: #0D3E63;
         height: rem-calc(54);
         color:#fff;
-        width: 100%;
-        line-height: rem-calc(48);
-        font-size: rem-calc(10);
+        text-transform: none;
+        line-height: rem-calc(28);
         letter-spacing: rem-calc(1);
         border: 3px solid #0D3E63;
-        text-align: right;
         background-image: url('#{$img-path}/facebook.svg');
-        background-repeat: no-repeat;
+        background-repeat: no-repeat; 
 
-        @include breakpoint(large) {
-        background-position: 2% 50%;
-  
+
     }
-
 }

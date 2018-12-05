@@ -14,44 +14,61 @@
 <body class="login">
 
 	<div class="loginCon"> 
-		<div class="row">
+		<div class=" loginWrapper row">
 			<!--LeftSide-->
 
 	   <div class="left-log fade-in column-large-6 show-for-large align-center cover-content">
-        <div class="overlay">
+        <div class="overlay"> </div>
              <div class="bgimg"></div>
-         </div>
+        
 			</div>
  
             <!--RightSide-->
-        <div class="right-log column-medium-6 column-small-8 align-center cover-content">
-                        <div class="whiteLogo show-for-small align-center">
+        <div class="right-log column-small-10 column-large-6 align-center cover-content">
+            <div class="row">
+                <div class="column-small-10 column-medium-8 column-xlarge-9">
+                        <div class="whiteLogo show-for-small-medium align-center hide-for-large">
                             <img src="images/LogoWhite.svg" alt="logowhite">
                         </div>
-                        <div class="vertical-logo align-center show-for-large">
+                        <div class="vertical-logo show-for-large hide-for-medium align-center">
                             <img src="images/logo.svg" alt="logo">
-                         </div>
-            
+                        </div>
+                              
+
             <form name="login-form" id="login-form" class="loginForm"> 
-            	   <p class="welcome show-for-large">Welcome back! Please login to your account.</p>
+                <div class="row">
+                 <p class="welcome show-for-large">Welcome back! Please login to your account.</p>
+               
+                <div class=" userWrapper column-small-12 align-center">
+                <div class="form-field">
+                    <span class="lnr lnr-user hide-for-large"></span>
+                    <input id="username" class="input-field"  type="text" required>
 
-               <!--form-field for user/ password</div> -->
+                    <label class="label" for="name">Username*</label>
+                </div>
 
-                 <div class="form-field-check row column-large-8 text-center align-center show-for-large">
-                            <div class="checkbox column-large-4">
-                                 <input type="checkbox" name="RememberMe" value="Remember">Remember Me
+                  <div class="form-field">
+                    <span class="lnr lnr-lock hide-for-large"></span>                    
+                    <input id="password" class="input-field" type="text" required>
+                    <label class="label" for="name">Password*</label>
+                </div>
+            </div>
+
+                 <div class="form-field-check row text-center align-center">
+                            <div class="checkbox column-large-6 show-for-large">
+                                 <input type="checkbox" name="RememberMe" value="Remember Me">Remember Me
                             </div>
-                                 <p class="link column-large-4 show-for-large"><a href="#">Forgot Password</a></p>
+                                 <p class="link align-center column-large-6 show-for-large"><a href="#">Forgot Password</a></p>
                     </div>
 
-                    <div class="fieldButtons row column-large-8">
-                        <div class="show-for-small column-large-4">
+                    <div class="fieldButtons row">
+                        <div class="column-small-12 hide-for-large">
                             <a class="button button-alt">Login</a>
                         </div>
-                        <div class="greenBut column-large-4 align-center">
-                        <button class="button-green show-for-large">Login</button>
+                        <div class="greenBut show-for-large column-small-12 column-xlarge-6">
+                        <button class="button-green">Login</button>
                         </div>
-                        <div class="blue column-large-4 align-center">
+                        <div class="blue column-small-12 column-xlarge-6">
                         <button class="button-blue">Login with Facebook</button>
                         </div>
      			    </div>
@@ -62,14 +79,16 @@
                     <p class="register column-small-6 text-left show-for-small">
                         <a href="#">Register Here</a></p> 
                 </div>
+                </div>
+
             </form>
-                                 <p class="privacytxt">Term of use. Privacy policy</p>  
+                         <p class="privacytxt align-center show-for-large">Term of use. Privacy policy</p>  
 
-
-                        </div>
   	 			
-
+                </div>
             </div>
-        </div>    
+        </div>  
+    </div>
+    </div>  
 </body>
 </html>
