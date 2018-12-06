@@ -1214,63 +1214,38 @@ input[type='button'] {
       font-size: 0.875rem;
       line-height: 1.5; }
 
-.edit {
-  background-color: #800080;
+.dashboard .edit {
+  background-color: #7486ae;
   border: none;
   color: white;
-  width: 190px;
-  margin: none;
-  aling-self: baseline; }
+  width: 100%;
+  margin: 0;
+  border-radius: 0; }
 
-.details {
+.dashboard .details {
   background-color: #2b655b;
   border: none;
   color: white;
   aling-self: baseline;
-  margin: none;
-  width: 190px; }
+  width: 100%;
+  margin: 0;
+  border-radius: 0; }
 
-.card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 400px;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  padding: none; }
-
-.plant-container {
-  margin: none; }
-
-.plant-container__detail {
+.dashboard .plant-container__detail {
   background-color: #fff; }
 
-.buttoncard {
-  display-flex: row; }
+.dashboard .buttoncard {
+  display-flex: row;
+  border-radius: 0; }
 
-.row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 400px;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  aling-self: baseline; }
+.dashboard .nopadding {
+  padding: 0; }
 
-plant-container__image {
-  margin: none; }
+.dashboard .plant-card {
+  padding: 0; }
 
-.column-small-3 column-large-3 {
-  padding-top: 25px; }
-
-.card {
-  padding-top: 50px; }
-
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+.dashboard .plant-info {
+  margin: 0; }
 
 .styleguide {
   margin: 5rem 0; }

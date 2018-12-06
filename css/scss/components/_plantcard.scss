@@ -1,12 +1,15 @@
+.dashboard {
+	
 
 .edit 
 	{
-    background-color: #800080; 
+    background-color: #7486ae; 
     border: none;
     color: white;
-    width:190px;
-    margin:none;
-    aling-self:baseline;
+    width:100%;
+    margin: 0;
+    border-radius:0;
+    
 }
 
 .details{
@@ -15,20 +18,15 @@
     border: none;
     color: white;
     aling-self: baseline;
-    margin:none;
-    width:190px;
+    width:100%;
+    margin:0;
+    border-radius:0;
 }
 
-.card{
-	display: flex;
-	width:400px; 
-	justify-content:flex-start;
-	
-	padding:none;
-}
+
 
 .plant-container {
-	margin: none; 
+	 
 
 }
 
@@ -36,39 +34,36 @@
 	background-color: #fff;
 }
 
+
+
 .buttoncard {
 	display-flex: row;
+	border-radius:0;
 }
 
-.row {
-    display: flex;
-	width:400px; 
-	justify-content:flex-start;
-	aling-self: baseline;
-
+.nopadding {
+	padding:0;
 }
 
-plant-container__image{
-	margin:none;
+
+
+.plant-card {
+	padding: 0;
 }
-.column-large-6 {
+
+.plant-info {
+	margin: 0;
+}
+
+
+.column-small-12 column-large-4 {
 	
+
+
+@include breakpoint (large)
+
 }
 
-.column-small-3 column-large-3 {
-	padding-top: 25px;
 }
-
-.card {
-	padding-top: 50px;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-
-
-
 
 
