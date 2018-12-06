@@ -82,7 +82,11 @@
             let temperature = tempSensor.custom.value,
                 light       = photoSensor.custom.value,
                 moisture    = moistureSensor.custom.value,
-                status      = document.querySelector('.health-info');
+                status      = document.querySelector('.health-info'),
+                timestamp   = document.querySelector('.update-info'),
+                currentdate = new Date();
+
+            timestamp.innerHTML = 'Updated at ' + (currentdate.getMonth() + 1) + '/' + currentdate.getDate() + '/' + currentdate.getFullYear() + ' at ' + (currentdate.getHours() < 10 ? "0" : "") + currentdate.getHours() + ':' + (currentdate.getMinutes() < 10 ? "0" : "") + currentdate.getMinutes();
 
             if (moisture !== '' && light !== '' && temperature !== '') {
                 console.log('temp: ' + temperature);
