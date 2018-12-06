@@ -29,18 +29,20 @@
         dropdownUser.classList.toggle('is-open');
     });
 
-    //Flip Weather Card
-    weatherCard.addEventListener('click', function () {
-        if (frontCard.classList.contains('active')) {
-            console.log('clicked');
-            frontCard.classList.remove('active');
-            backCard.classList.add('active');
-        } else if (!frontCard.classList.contains('active')) {
-            frontCard.classList.add('active');
-            backCard.classList.remove('active');
-        }
-    });
-
+    if (weatherCard) {
+        //Flip Weather Card
+        weatherCard.addEventListener('click', function () {
+            if (frontCard.classList.contains('active')) {
+                console.log('clicked');
+                frontCard.classList.remove('active');
+                backCard.classList.add('active');
+            } else if (!frontCard.classList.contains('active')) {
+                frontCard.classList.add('active');
+                backCard.classList.remove('active');
+            }
+        });
+    }
+    
     //Toggle Read More
     if (readMore) {
         readMore.addEventListener('click', function () {
