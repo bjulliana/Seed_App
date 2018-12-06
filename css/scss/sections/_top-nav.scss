@@ -103,6 +103,7 @@
                 background-color: white;
                 border: 1px solid set-color('grey-300');
                 padding: 0;
+                min-width: rem-calc(160);
 
                 > li {
                     width: 100%;

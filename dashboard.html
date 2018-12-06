@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Seed App</title>
+
+<link href="css/main.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
+
+</head>
+<body class="app dashboard">
+<div>
+	<div class="sidebar">
+		<div class="sidebar-inner">
+			<div class="sidebar-logo">
+				<div class="sidebar-full">
+					<div class="logo">
+						<a href="#"><img src="images/Logo-Horizontal-White.svg" alt=""></a>
+						<span class="sidebar-toggle"><a href="#"><span class="lnr lnr-chevron-left-circle"></span></a></span>
+					</div>
+				</div>
+				<div class="sidebar-collapsed">
+					<div class="logo">
+						<a href="#"><img src="images/Symbol-White.svg" alt=""></a>
+					</div>
+				</div>
+			</div>
+            <nav>
+                <h2 class="hidden">Main Navigation</h2>
+                <ul class="sidebar-menu scrollable">
+                    <li class="nav-item">
+                        <a class="sidebar-link active" href="dashboard.html">
+                            <span class="lnr lnr-home nav-icon"></span>
+                            <span class="title">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="sidebar-link dropdown-toggle">
+                            <span class="lnr lnr-leaf nav-icon"></span>
+                            <span class="title">My Plants</span>
+                            <span class="arrow-right"><span class="lnr lnr-chevron-right"></span></span>
+                            <span class="arrow-down"><span class="lnr lnr-chevron-down"></span></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="sidebar-link" href="detail.html">Planty</a></li>
+                            <li><a class="sidebar-link" href="detail.html">Carlos The Plant</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-link" href="library.html">
+                            <span class="lnr lnr-book nav-icon"></span>
+                            <span class="title">Plant Library</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-link" href="#">
+                            <span class="lnr lnr-cog nav-icon"></span>
+                            <span class="title">Settings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-link" href="#">
+                            <span class="lnr lnr-question-circle nav-icon"></span>
+                            <span class="title">Help</span>
+                        </a>
+                    </li>
+                </ul>
+        </div>
+    </div>
+	</div>
+	<div class="page-wrapper">
+        <nav>
+            <h2 class="hidden">Top Navigation</h2>
+            <div class="header navbar">
+                <div class="header-container">
+                    <ul class="nav-left">
+                        <li class="sidebar-toggle hide-for-xxlarge"><a href="#"><span class="lnr lnr-menu"></span></a></li>
+                        <li class="search-icon show-for-medium"><a><span class="lnr lnr-magnifier"></span></a></li>
+                        <li class="search-input show-for-medium"><input class="form-control" type="text" placeholder="Search..."></li>
+                    </ul>
+                    <img class="mobile-logo show-for-small" src="images/Symbol.svg" alt="">
+                    <ul class="nav-right">
+                        <li class="dropdown-usr">
+                            <a href="#" class="dropdown-user dropdown-toggle-usr">
+                                <span class="lnr lnr-chevron-down show-for-medium"></span>
+                                <span class="user-name show-for-medium">John Doe</span>
+                                <img src="https://randomuser.me/api/portraits/men/10.jpg" alt="">
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" class=""><span class="lnr lnr-user nav-icon"></span><span>Account</span></a></li>
+                                <li><a href="#" class="nav-icon"><span class="lnr lnr-exit nav-icon"></span><span>Logout</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+		
+<br>
+				<!--div-->
+<main class="dashboard-main">
+<div class="row">
+<div class="column-small-12 column-large-4">
+                    <div class="plant-card card">
+                        
+                        <div class="plant-container">
+                        	<div class="plant-container__image column-small-6">
+                        		<img src="./images/plants/planty.jpg">
+                        	</div>
+                        	<div class="plant-container__detail">
+                        		<div class="row">
+                        			<div class="column-large-6">
+                        				Planty<br>
+                        				Health: Good
+                        			</div>
+                        			 <div class="column-large-6">
+                        				<ul class="plant-info">
+                                            <span class="lnr lnr-book"></span>Plant Type
+                                            <span class="lnr lnr-history"></span>67 Days
+                                        </ul>
+                                        </div>
+                                    </div>
+                        			<div class="buttoncard row">
+                                        <div class="column-large-6 nopadding">
+                        			<button class="edit">Edit</button>
+                                </div>
+                                <div class="column-large-6 nopadding">
+                        			<button class="details">Details</button>
+                        		</div>
+                            </div> 
+                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+                        			 
+
+
+<script type="text/javascript" src="js/index.js"></script>
+
+</body>
+</html>
