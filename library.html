@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Seed App</title>
 
@@ -18,80 +18,86 @@
             <div class="sidebar-logo">
                 <div class="sidebar-full">
                     <div class="logo">
-                        <a href="#"><img src="images/Logo-Horizontal-White.svg" alt=""></a>
+                        <a href="#"><img src="images/Logo-Horizontal-White.svg" alt="Seed Logo"></a>
                         <span class="sidebar-toggle"><a href="#"><span class="lnr lnr-chevron-left-circle"></span></a></span>
                     </div>
                 </div>
                 <div class="sidebar-collapsed">
                     <div class="logo">
-                        <a href="#"><img src="images/Symbol-White.svg" alt=""></a>
+                        <a href="#"><img src="images/Symbol-White.svg" alt="Seed Logo"></a>
                     </div>
                 </div>
             </div>
-            <ul class="sidebar-menu scrollable">
-                <li class="nav-item">
-                    <a class="sidebar-link" href="index.html">
-                        <span class="lnr lnr-star nav-icon"></span>
-                        <span class="title">Dashboard</span>
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="sidebar-link dropdown-toggle">
-                        <span class="lnr lnr-star nav-icon"></span>
-                        <span class="title">My Plants</span>
-                        <span class="arrow-right"><span class="lnr lnr-chevron-right"></span></span>
-                        <span class="arrow-down"><span class="lnr lnr-chevron-down"></span></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="sidebar-link" href="detail.html">Plant 1</a></li>
-                        <li><a class="sidebar-link" href="detail.html">Plant 2</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="sidebar-link active" href="library.html">
-                        <span class="lnr lnr-star nav-icon"></span>
-                        <span class="title">Plant Library</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="sidebar-link" href="#">
-                        <span class="lnr lnr-star nav-icon"></span>
-                        <span class="title">Settings</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="sidebar-link" href="#">
-                        <span class="lnr lnr-star nav-icon"></span>
-                        <span class="title">Help</span>
-                    </a>
-                </li>
-            </ul>
+            <nav>
+                <h2 class="hidden">Main Navigation</h2>
+                <ul class="sidebar-menu scrollable">
+                    <li class="nav-item">
+                        <a class="sidebar-link" href="index.html">
+                            <span class="lnr lnr-star nav-icon"></span>
+                            <span class="title">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="sidebar-link dropdown-toggle">
+                            <span class="lnr lnr-star nav-icon"></span>
+                            <span class="title">My Plants</span>
+                            <span class="arrow-right"><span class="lnr lnr-chevron-right"></span></span>
+                            <span class="arrow-down"><span class="lnr lnr-chevron-down"></span></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="sidebar-link" href="detail.html">Planty</a></li>
+                            <li><a class="sidebar-link" href="detail.html">Carlos The Plant</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-link active" href="library.html">
+                            <span class="lnr lnr-star nav-icon"></span>
+                            <span class="title">Plant Library</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-link" href="#">
+                            <span class="lnr lnr-star nav-icon"></span>
+                            <span class="title">Settings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="sidebar-link" href="#">
+                            <span class="lnr lnr-star nav-icon"></span>
+                            <span class="title">Help</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
     <div class="page-wrapper">
-        <div class="header navbar">
-            <div class="header-container">
-                <ul class="nav-left">
-                    <li class="sidebar-toggle hide-for-xxlarge"><a href="#"><span class="lnr lnr-menu"></span></a></li>
-                    <li class="search-icon show-for-medium"><a><span class="lnr lnr-magnifier"></span></a></li>
-                    <li class="search-input show-for-medium"><input class="form-control" type="text" placeholder="Search..."></li>
-                </ul>
-                <img class="mobile-logo show-for-small" src="images/Symbol.svg" alt="">
-                <ul class="nav-right">
-                    <li class="dropdown-usr">
-                        <a href="#" class="dropdown-user dropdown-toggle-usr">
-                            <span class="lnr lnr-chevron-down show-for-medium"></span>
-                            <span class="user-name show-for-medium">John Doe</span>
-                            <img src="https://randomuser.me/api/portraits/men/10.jpg" alt="">
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" class=""><span class="lnr lnr-user nav-icon"></span><span>Account</span></a></li>
-                            <li><a href="#" class="nav-icon"><span class="lnr lnr-exit nav-icon"></span><span>Logout</span></a></li>
-                        </ul>
-                    </li>
-                </ul>
+        <nav>
+            <h2 class="hidden">Top Navigation</h2>
+            <div class="header navbar">
+                <div class="header-container">
+                    <ul class="nav-left">
+                        <li class="sidebar-toggle hide-for-xxlarge"><a href="#"><span class="lnr lnr-menu"></span></a></li>
+                        <li class="search-icon show-for-medium"><a><span class="lnr lnr-magnifier"></span></a></li>
+                        <li class="search-input show-for-medium"><input class="form-control" type="text" placeholder="Search..."></li>
+                    </ul>
+                    <img class="mobile-logo show-for-small" src="images/Symbol.svg" alt="Seed Symbol">
+                    <ul class="nav-right">
+                        <li class="dropdown-usr">
+                            <a href="#" class="dropdown-user dropdown-toggle-usr">
+                                <span class="lnr lnr-chevron-down show-for-medium"></span>
+                                <span class="user-name show-for-medium">Terry Crews</span>
+                                <img src="images/user.png" alt="User Image">
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" class=""><span class="lnr lnr-user nav-icon"></span><span>Account</span></a></li>
+                                <li><a href="#" class="nav-icon"><span class="lnr lnr-exit nav-icon"></span><span>Logout</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </nav>
         <main class="dashboard-main">
             <div class="row">
                 <div class="column-small-12">
@@ -118,56 +124,80 @@
                                 </div>
                                 <div class="plant-list">
                                     <a href="#" class="single-item active">
-                                        <img class="plant-image" src="images/plants/library_plant.jpg">
+                                        <img class="plant-image" src="images/plants/amarillys.jpg" alt="Amarillys Image">
                                         <div class="plant-name">Amarillys</div>
                                     </a>
                                     <a href="#" class="single-item">
-                                        <img class="plant-image" src="images/plants/library_plant.jpg">
-                                        <div class="plant-name">Amarillys</div>
+                                        <img class="plant-image" src="images/plants/violet.jpg" alt="African Violet Image">
+                                        <div class="plant-name">African Violet</div>
                                     </a>
                                     <a href="#" class="single-item">
-                                        <img class="plant-image" src="images/plants/library_plant.jpg">
-                                        <div class="plant-name">Amarillys</div>
+                                        <img class="plant-image" src="images/plants/alocasia.jpg" alt="Alocasia Image">
+                                        <div class="plant-name">Alocasia</div>
                                     </a>
                                     <a href="#" class="single-item">
-                                        <img class="plant-image" src="images/plants/library_plant.jpg">
-                                        <div class="plant-name">Amarillys</div>
+                                        <img class="plant-image" src="images/plants/aluminum.jpg" alt="Aluminum Plant Image">
+                                        <div class="plant-name">Aluminum Plant</div>
                                     </a>
                                     <a href="#" class="single-item">
-                                        <img class="plant-image" src="images/plants/library_plant.jpg">
-                                        <div class="plant-name">Amarillys</div>
+                                        <img class="plant-image" src="images/plants/anthurium.jpg" alt="Anthurium Image">
+                                        <div class="plant-name">Anthurium</div>
                                     </a>
                                     <a href="#" class="single-item">
-                                        <img class="plant-image" src="images/plants/library_plant.jpg">
-                                        <div class="plant-name">Amarillys</div>
+                                        <img class="plant-image" src="images/plants/begonia.jpg" alt="Begonia Image">
+                                        <div class="plant-name">Begonia</div>
                                     </a>
                                     <a href="#" class="single-item">
-                                        <img class="plant-image" src="images/plants/library_plant.jpg">
-                                        <div class="plant-name">Amarillys</div>
+                                        <img class="plant-image" src="images/plants/bougainvillea.jpg" alt="Bougainvillea Image">
+                                        <div class="plant-name">Bougainvillea</div>
                                     </a>
                                     <a href="#" class="single-item">
-                                        <img class="plant-image" src="images/plants/library_plant.jpg">
-                                        <div class="plant-name">Amarillys</div>
+                                        <img class="plant-image" src="images/plants/caladium.jpg" alt="Caladium Image">
+                                        <div class="plant-name">Caladium Plant</div>
                                     </a>
                                     <a href="#" class="single-item">
-                                        <img class="plant-image" src="images/plants/library_plant.jpg">
-                                        <div class="plant-name">Amarillys</div>
+                                        <img class="plant-image" src="images/plants/chrysanthemum.jpg" alt="Chrysanthemum Image">
+                                        <div class="plant-name">Chrysanthemum</div>
                                     </a>
                                     <a href="#" class="single-item">
-                                        <img class="plant-image" src="images/plants/library_plant.jpg">
-                                        <div class="plant-name">Amarillys</div>
+                                        <img class="plant-image" src="images/plants/geranium.jpg" alt="Geranium Image">
+                                        <div class="plant-name">Geranium</div>
+                                    </a>
+                                    <a href="#" class="single-item">
+                                        <img class="plant-image" src="images/plants/jasmine.jpg" alt="Jasmine Image">
+                                        <div class="plant-name">Jasmine</div>
+                                    </a>
+                                    <a href="#" class="single-item">
+                                        <img class="plant-image" src="images/plants/maidenhair.jpg" alt="Maidenhair Fern Image">
+                                        <div class="plant-name">Maidenhair Fern</div>
+                                    </a>
+                                    <a href="#" class="single-item">
+                                        <img class="plant-image" src="images/plants/lily.jpg" alt="Peace Lily Image">
+                                        <div class="plant-name">Peace Lily</div>
+                                    </a>
+                                    <a href="#" class="single-item">
+                                        <img class="plant-image" src="images/plants/shamrock.jpg" alt="Shamrock Image">
+                                        <div class="plant-name">Shamrock</div>
+                                    </a>
+                                    <a href="#" class="single-item">
+                                        <img class="plant-image" src="images/plants/zebra.jpg" alt="Zebra Image">
+                                        <div class="plant-name">Zebra</div>
                                     </a>
                                 </div>
                             </div>
                             <div class="column-small-12 column-large-9 library-right">
                                 <div class="row plant-description">
                                     <div class="column-small-2 column-large-4 show-for-large">
-                                        <div class="plant-image"><img src="images/plants/library_plant.jpg"></div>
+                                        <div class="plant-image"><img src="images/plants/amarillys.jpg.jpg" alt="Amarillys Plant Image"></div>
                                     </div>
                                     <div class="column-small-12 column-large-8">
-                                        <div class="title-area"><img src="images/plants/library_plant.jpg" class="hide-for-large"><h1 class="h4 plant-name">Amarillys</h1></div>
+                                        <div class="title-area"><img src="images/plants/amarillys.jpg.jpg" alt="Amarillys Plant Image" class="hide-for-large">
+                                            <h1 class="h4 plant-name">Amarillys</h1></div>
                                         <hr>
-                                        <div class="plant-information short"><p>Amaryllis plants are native to the tropical regions of South America. These spectacular bulb plants can be planted from October through the end of April and will bloom from late December to June. With proper after-bloom care, an Amaryllis plant flowers year after year. Amaryllis Bulbs can be purchased pre-planted or you can do the planting yourself. The larger and fatter the plant bulbs, the more flowers an Amaryllis produces. The brightly colored flowers come in red, orange, white, pink, and salmon. Some new varieties even have striped flowers. Amaryllis plants are considered poisonous and should be kept away from pets and children.</p></div><a href="#" class="read-more">Read More</a>
+                                        <div class="plant-information short">
+                                            <p>Amaryllis plants are native to the tropical regions of South America. These spectacular bulb plants can be planted from October through the end of April and will bloom from late December to June. With proper after-bloom care, an Amaryllis plant flowers year after year. Amaryllis Bulbs can be purchased pre-planted or you can do the planting yourself. The larger and fatter the plant bulbs, the more flowers an Amaryllis produces. The brightly colored flowers come in red, orange, white, pink, and salmon. Some new varieties even have striped flowers. Amaryllis plants are considered poisonous and should be kept away from pets and children.</p>
+                                        </div>
+                                        <a href="#" class="read-more">Read More</a>
                                     </div>
                                 </div>
                                 <div class="accordion-wrapper">
@@ -175,6 +205,7 @@
                                         <input id="toggle1" type="checkbox" class="accordion-toggle" name="toggle" />
                                         <div class="accordion-title"><label for="toggle1">Light</label><span class="lnr lnr-chevron-right"></span></div>
                                         <section class="accordion-content">
+                                            <h2 class="hidden">Accordion Content - Light</h2>
                                             <p>Amaryllis plants need bright indirect light. Southern exposure is best, eastern and western exposures are adequate, northern exposure requires additional artificial light.</p>
                                         </section>
                                     </div>
@@ -183,6 +214,7 @@
                                         <input id="toggle2" type="checkbox" class="accordion-toggle" name="toggle" />
                                         <div class="accordion-title"><label for="toggle2">Water</label><span class="lnr lnr-chevron-right"></span></div>
                                         <section class="accordion-content">
+                                            <h2 class="hidden">Accordion Content - Water</h2>
                                             <p>Water sparingly until the stem starts to grow out of the bulb. As the stem, leaves, and buds develop gradually increase your water. Keeping the soil moist helps prolong the Amaryllis flowers.</p>
                                         </section>
                                     </div>
@@ -191,6 +223,7 @@
                                         <input id="toggle3" type="checkbox" class="accordion-toggle" name="toggle" />
                                         <div class="accordion-title"><label for="toggle3">Temperature</label><span class="lnr lnr-chevron-right"></span></div>
                                         <section class="accordion-content">
+                                            <h2 class="hidden">Accordion Content - Temperature</h2>
                                             <p>An Amaryllis is a tropical plant and enjoys temperatures between 68°-70°. Once an Amaryllis plant blooms, move it to a cooler area (65°). This helps the flowers last longer.</p>
                                         </section>
                                     </div>
@@ -199,6 +232,7 @@
                                         <input id="toggle4" type="checkbox" class="accordion-toggle" name="toggle" />
                                         <div class="accordion-title"><label for="toggle4">Humidity</label><span class="lnr lnr-chevron-right"></span></div>
                                         <section class="accordion-content">
+                                            <h2 class="hidden">Accordion Content - Humidity</h2>
                                             <p>Basic household humidity or even less keeps an Amaryllis plant healthy and free of diseases.</p>
                                         </section>
                                     </div>
@@ -212,7 +246,7 @@
     </div>
 </div>
 
-<script type="text/javascript" src="js/index.js"></script>
+<script src="js/index.js"></script>
 
 </body>
 </html>

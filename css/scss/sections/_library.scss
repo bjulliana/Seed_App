@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     padding: 0;
+    max-height: calc(100vh - 170px);
 
     .library-left {
         display: none;
@@ -15,6 +16,7 @@
         .plant-list {
             overflow-y: scroll;
             height: 100%;
+            padding-bottom: rem-calc(100);
 
             .single-item {
                 display: flex;
@@ -24,7 +26,8 @@
                 border-bottom: 1px solid set-color('off-white');
                 font-weight: 400;
 
-                &.active {
+                &.active,
+                &:hover {
                     background-color: set-color('off-white');
                 }
 
