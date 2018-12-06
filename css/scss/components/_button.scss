@@ -81,4 +81,19 @@ input[type='button'] {
         line-height: rem-calc(50);
         font-size: rem-calc(16);
     }
+
+     &.button-blue {
+        display: block;
+        background: #0D3E63;
+        height: rem-calc(54);
+        color:#fff;
+        text-transform: none;
+        line-height: rem-calc(28);
+        letter-spacing: rem-calc(1);
+        border: 3px solid #0D3E63;
+        background-image: url('#{$img-path}/facebook.svg');
+        background-repeat: no-repeat; 
+
+
+    }
 }
