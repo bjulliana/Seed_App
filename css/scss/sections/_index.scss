@@ -7,16 +7,14 @@
 
 .loginCon 
 {
- padding: 0;
+    padding: 0;
     .loginWrapper, .row {
     padding:0;
     max-width: none;
-
     }  
 
     .loginWrapper {
       height: 100vh;
-
     }
 }
 
@@ -56,8 +54,6 @@ justify-content: center;
           width:130px; 
           }
 }
-
-
 .welcome {
      font-size: rem-calc(14);
          margin-bottom: 0px;
@@ -92,6 +88,10 @@ font-weight: 300;
   text-align: center;
 }
 
+    #logoWhite
+    {
+      margin-bottom: 60px !important;
+    }  
 input[type='username'],
 input[type='password'],
 .loginForm {
@@ -122,29 +122,56 @@ input[type='password'],
             
         .lnr {
             color: set-color('white');
+            font-size: rem-calc(35);
+               @include breakpoint(large) {
+               color: set-color('grey-700');
+              }
+            }
+            }
+
+        #userIcon
+        {
+        position: absolute;
+            top: 6px;
+            left:0;
+        }  
+
+  #passIcon
+        {
+        position: absolute;
+            top: 6px;
+            left:0;
+        }  
+
+        #passLabel
+        {
+          position: absolute;
+            top: 0;
+            left:40px;
+            padding-top: 0;  
+            margin-top: 0;
+                @include breakpoint(large) {
+                    top: 0;
+            left:0px;
+            padding-top: 0;  
+            margin-top: 0;
+                }
         }
 
-        .label {
-            position: absolute;
-            top: rem-calc(30);
-            transition: 0.2s ease-in-out;
-            cursor: text;
-            padding-left: rem-calc(10);
-            width: 100%;
-            font-family: $secondary-font;
-            font-size: rem-calc(16);
-            font-weight: 700;
-            color: set-color('white');
-             @include breakpoint(large) {
-            font-weight: 300;
-            color: set-color('grey-700');
+        #password{
+          padding-top: 0;
+        }
+
+        #loginCon{
+          margin-bottom: 40px;
+        }
+
+  
+
+        #login-form .form-field {
+          position: relative;
+        }
           }
-
-        }
-    }
-
-}
-
 .register
 {
 font-size: rem-calc(11);
@@ -155,8 +182,6 @@ padding-top: 0;
 padding-bottom: 0;
 color:#fff;
 }
-
-
 .newUser
 {
 padding-top: 0;
@@ -170,7 +195,6 @@ color:#fff;
   margin:0;
   width: 100%;
 }
-
 
 .button-blue {
   padding: 0;
@@ -199,7 +223,7 @@ color:#fff;
     font-weight: normal;  
     font-size: rem-calc(14); 
  }
-}
+
 
 }
-
+}

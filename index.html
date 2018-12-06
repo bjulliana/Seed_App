@@ -15,7 +15,6 @@
 
 	<div class="loginCon"> 
 		<div class=" loginWrapper row">
-			<!--LeftSide-->
 
 	   <div class="left-log fade-in column-large-6 show-for-large align-center cover-content">
         <div class="overlay"> </div>
@@ -23,11 +22,10 @@
         
 			</div>
  
-            <!--RightSide-->
         <div class="right-log column-small-10 column-large-6 align-center cover-content">
             <div class="row">
                 <div class="column-small-10 column-medium-8 column-xlarge-9">
-                        <div class="whiteLogo show-for-small-medium align-center hide-for-large">
+                        <div class="whiteLogo show-for-small-medium align-center hide-for-large" id="logoWhite">
                             <img src="images/LogoWhite.svg" alt="logowhite">
                         </div>
                         <div class="vertical-logo show-for-large hide-for-medium align-center">
@@ -36,21 +34,22 @@
                               
 
             <form name="login-form" id="login-form" class="loginForm"> 
-                <div class="row">
+                <div class="row" id="loginRow">
                  <p class="welcome show-for-large">Welcome back! Please login to your account.</p>
                
                 <div class=" userWrapper column-small-12 align-center">
-                <div class="form-field">
-                    <span class="lnr lnr-user hide-for-large"></span>
-                    <input id="username" class="input-field"  type="text" required>
+                <div class="form-field" id="loginCon">
+                    <span class="lnr lnr-user" id="userIcon"></span>
 
-                    <label class="label" for="name">Username*</label>
+                  <input id="username" class="input-field"  type="text" required>
+
                 </div>
 
                   <div class="form-field">
-                    <span class="lnr lnr-lock hide-for-large"></span>                    
-                    <input id="password" class="input-field" type="text" required>
-                    <label class="label" for="name">Password*</label>
+                    <span class="lnr lnr-lock" id="passwordIcon"></span> 
+                   
+                 <input id="password" class="input-field" type="text" required>
+                    
                 </div>
             </div>
 

@@ -2439,6 +2439,8 @@ input[type='button'] {
     font-size: 0.75rem;
     color: #ffffff;
     text-align: center; }
+  .login #logoWhite {
+    margin-bottom: 60px !important; }
   .login input[type='username'],
   .login input[type='password'],
   .login .loginForm {
@@ -2472,27 +2474,53 @@ input[type='button'] {
       .login input[type='username'] .form-field .lnr,
       .login input[type='password'] .form-field .lnr,
       .login .loginForm .form-field .lnr {
-        color: #ffffff; }
-      .login input[type='username'] .form-field .label,
-      .login input[type='password'] .form-field .label,
-      .login .loginForm .form-field .label {
-        position: absolute;
-        top: 1.875rem;
-        -webkit-transition: 0.2s ease-in-out;
-        transition: 0.2s ease-in-out;
-        cursor: text;
-        padding-left: 0.625rem;
-        width: 100%;
-        font-family: "Lato", Arial, sans-serif;
-        font-size: 1rem;
-        font-weight: 700;
-        color: #ffffff; }
+        color: #ffffff;
+        font-size: 2.1875rem; }
         @media screen and (min-width: 900px) {
-          .login input[type='username'] .form-field .label,
-          .login input[type='password'] .form-field .label,
-          .login .loginForm .form-field .label {
-            font-weight: 300;
+          .login input[type='username'] .form-field .lnr,
+          .login input[type='password'] .form-field .lnr,
+          .login .loginForm .form-field .lnr {
             color: #3c3c3c; } }
+    .login input[type='username'] #userIcon,
+    .login input[type='password'] #userIcon,
+    .login .loginForm #userIcon {
+      position: absolute;
+      top: 6px;
+      left: 0; }
+    .login input[type='username'] #passIcon,
+    .login input[type='password'] #passIcon,
+    .login .loginForm #passIcon {
+      position: absolute;
+      top: 6px;
+      left: 0; }
+    .login input[type='username'] #passLabel,
+    .login input[type='password'] #passLabel,
+    .login .loginForm #passLabel {
+      position: absolute;
+      top: 0;
+      left: 40px;
+      padding-top: 0;
+      margin-top: 0; }
+      @media screen and (min-width: 900px) {
+        .login input[type='username'] #passLabel,
+        .login input[type='password'] #passLabel,
+        .login .loginForm #passLabel {
+          top: 0;
+          left: 0px;
+          padding-top: 0;
+          margin-top: 0; } }
+    .login input[type='username'] #password,
+    .login input[type='password'] #password,
+    .login .loginForm #password {
+      padding-top: 0; }
+    .login input[type='username'] #loginCon,
+    .login input[type='password'] #loginCon,
+    .login .loginForm #loginCon {
+      margin-bottom: 40px; }
+    .login input[type='username'] #login-form .form-field,
+    .login input[type='password'] #login-form .form-field,
+    .login .loginForm #login-form .form-field {
+      position: relative; }
   .login .register {
     font-size: 0.6875rem;
     text-decoration: underline;
