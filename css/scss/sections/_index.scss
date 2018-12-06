@@ -1,0 +1,229 @@
+.login {
+  background-color: set-color('accent-1');
+  @include breakpoint(large) {
+  background-color: #fff;
+  }
+
+
+.loginCon 
+{
+    padding: 0;
+    .loginWrapper, .row {
+    padding:0;
+    max-width: none;
+    }  
+
+    .loginWrapper {
+      height: 100vh;
+    }
+}
+
+.left-log {
+  position:relative;
+  padding: 0;
+  margin: 0;
+  z-index: 1;
+  background-color: set-color('accent-1'); 
+    .bgimg {
+    background-image: url('#{$img-path}/cto-bg2.jpg');
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    
+    }
+}
+.overlay{
+    position: absolute;
+    opacity: 0.55;
+    height: 100%;
+    width: 100%;
+    background-color:set-color('green-overlay');
+
+}
+
+.right-log {
+display: flex;
+flex-direction: column;
+justify-content: center;
+         .whiteLogo img {
+          width:130px;
+
+          }
+          .vertical-logo img {
+          width:130px; 
+          }
+}
+.welcome {
+     font-size: rem-calc(14);
+         margin-bottom: 0px;
+
+    @include breakpoint(xlarge) {
+    font-size: rem-calc(17);
+    color: set-color('grey-700');
+    font-weight: 300;
+    
+  }
+}
+
+.checkbox {
+color: set-color('grey-700');
+font-weight: 300;    
+margin-top: auto;
+margin-bottom: auto;
+font-size: rem-calc(14);
+
+}  
+
+.link a {
+font-size: rem-calc(14);
+margin-bottom: auto;
+font-weight: 300;  
+}
+
+.link2 a {
+  font-weight: 900;
+  font-size: rem-calc(12);
+  color: set-color('white');
+  text-align: center;
+}
+
+    #logoWhite
+    {
+      margin-bottom: 60px !important;
+    }  
+input[type='username'],
+input[type='password'],
+.loginForm {
+ margin-top: 0;
+ margin-bottom: rem-calc(10);
+
+ .userWrapper {
+  text-align: left;
+  padding-top: 0;
+}
+
+    .form-field {
+        position: relative;
+
+        .input-field {
+            margin-bottom: 0;
+            border: 0;
+            background-color: transparent;
+            padding: rem-calc(40 10 10 10);
+            width: 100%;
+            color: rgba(set-color('white'), 0.7);
+            border-bottom: 1px solid rgba(set-color('white'), 0.9);
+            @include breakpoint(large) {
+            color: rgba(set-color('grey-900'), 0.7);
+            border-bottom: 1px solid rgba(set-color('grey-900'), 0.3);
+                                      }
+            }
+            
+        .lnr {
+            color: set-color('white');
+            font-size: rem-calc(35);
+               @include breakpoint(large) {
+               color: set-color('grey-700');
+              }
+            }
+            }
+
+        #userIcon
+        {
+        position: absolute;
+            top: 6px;
+            left:0;
+        }  
+
+  #passIcon
+        {
+        position: absolute;
+            top: 6px;
+            left:0;
+        }  
+
+        #passLabel
+        {
+          position: absolute;
+            top: 0;
+            left:40px;
+            padding-top: 0;  
+            margin-top: 0;
+                @include breakpoint(large) {
+                    top: 0;
+            left:0px;
+            padding-top: 0;  
+            margin-top: 0;
+                }
+        }
+
+        #password{
+          padding-top: 0;
+        }
+
+        #loginCon{
+          margin-bottom: 40px;
+        }
+
+  
+
+        #login-form .form-field {
+          position: relative;
+        }
+          }
+.register
+{
+font-size: rem-calc(11);
+text-decoration: underline;
+padding-left: 5px;
+font-weight: bold;
+padding-top: 0;
+padding-bottom: 0;
+color:#fff;
+}
+.newUser
+{
+padding-top: 0;
+padding-bottom: 0;
+font-size: rem-calc(11);
+font-weight: bold;
+color:#fff;
+}
+
+.button, .button-green, .button-blue, .button-alt{
+  margin:0;
+  width: 100%;
+}
+
+.button-blue {
+  padding: 0;
+  text-align: center;
+  font-size: rem-calc(12);
+  background-position: 5% 50%; 
+
+    @include breakpoint(large) {
+      font-size: rem-calc(13);
+      background-position: 5% 50%; 
+    }
+    @include breakpoint(xlarge) {
+      font-size: rem-calc(12);
+    }
+}
+.privacytxt
+{
+text-align: center;
+font-size: rem-calc(12);
+font-weight: bold;
+color:#fff;
+
+    @include breakpoint(large) {
+    color: set-color('grey-700');
+
+    font-weight: normal;  
+    font-size: rem-calc(14); 
+ }
+
+
+}
+}
