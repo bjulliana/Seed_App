@@ -23,43 +23,6 @@
 
     var board = new five.Board();
 
-    class PlantState {
-        constructor(temperature, light, moisture) {
-            this.temperature = temperature;
-            this.light       = light;
-            this.moisture    = moisture;
-        }
-
-        plantStatus(plantData) {
-            this.temperature = plantData.temperature;
-            this.light       = plantData.light;
-            this.moisture    = plantData.moisture;
-        }
-    }
-
-    PlantState.prototype.updateStatus = function () {
-        console.log(this);
-        //console.log(this, this.moisture < 10);
-        //console.log(this.temperature < 10);
-        //console.log(this.light < 10);
-
-        if ((this.moisture < 10) && (this.temperature < 10)) {
-            console.log('bad');
-            //status.innerHTML = 'Poor';
-            //status.className = '';
-            //status.classList.add('health-poor', 'health-info');
-            //} else if ((this.temperature < 10) || (this.light < 10) || (this.moisture < 10)) {
-            //    console.log('nah');
-            //} else if ((this.temperature > 18) && (this.light > 50) && (this.moisture > 50)) {
-            //    console.log('good');
-        }
-
-    };
-
-    //PlantState.prototype.update = function () {
-    //    console.log(this.temperature)
-    //};
-
     board.on('ready', function () {
         var moistureSensor = new five.Sensor({
             pin      : 'A0',
@@ -97,19 +60,13 @@
             var moisture      = this.value;
             var test          = this.scaleTo(100, 0);
             this.custom.value = test;
-            plantState.plantStatus({
-                moisture: test
-            });
             moistureChart(test);
             updateStatus();
         });
 
         tempSensor.on('change', function () {
-            var temp          = this.celsius - 10;
-            this.custom.value = temp;
-            plantState.plantStatus({
-                temperature: 5
-            });
+            var temp                                       = this.celsius - 20;
+            this.custom.value                              = temp;
             document.querySelector('.temp-info').innerHTML = '<p>' + temp + '°<span>C</span></p>';
             updateStatus();
         });
@@ -117,18 +74,8 @@
         photoSensor.on('change', function () {
             var lux           = this.scaleTo(0, 100);
             this.custom.value = lux;
-            //console.log(lux);
-            plantState.plantStatus({
-                light: lux
-            });
             lightChart(lux);
             updateStatus();
-        });
-
-        const plantState = new PlantState({
-            moisture   : moistureSensor.value,
-            light      : photoSensor.value,
-            temperature: tempSensor.celsius
         });
 
         function updateStatus() {
@@ -136,11 +83,6 @@
                 light       = photoSensor.custom.value,
                 moisture    = moistureSensor.custom.value,
                 status      = document.querySelector('.health-info');
-            //
-            //console.log('temp: ' + temperature);
-            //console.log('light: ' + light);
-            //console.log('moisture: ' + moisture);
-            //console.log(moistureSensor);
 
             if (moisture !== '' && light !== '' && temperature !== '') {
                 console.log('temp: ' + temperature);
@@ -173,10 +115,8 @@
     }
 
     function moistureChart(moisture) {
-        //var roundMoisture = createRemap(moisture);
-        var roundMoisture = moisture;
-        var canvas        = document.getElementById('moistureChart');
-        var ctx           = canvas.getContext('2d');
+        var canvas = document.getElementById('moistureChart');
+        var ctx    = canvas.getContext('2d');
 
         var moistureChrt = new Chart(ctx, {
             type   : 'doughnut',
@@ -184,7 +124,7 @@
                 datasets: [
                     {
                         label               : 'Moisture',
-                        data                : [roundMoisture, 100 - roundMoisture],
+                        data                : [moisture, 100 - moisture],
                         backgroundColor     : [
                             '#7486ae',
                             '#dadada'
@@ -215,7 +155,7 @@
                         var color     = '#3c3c3c';
                         ctx.font      = 'bold ' + fontSize + ' Lato';
                         ctx.fillStyle = color;
-                        ctx.fillText(roundMoisture + '%', width / 2.6, height / 1.2);
+                        ctx.fillText(moisture + '%', width / 2.6, height / 1.2);
 
                     }
                 }
@@ -281,5 +221,4 @@
             }
         });
     }
-
 })();
