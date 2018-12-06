@@ -1229,6 +1229,39 @@ input[type='button'] {
       font-size: 0.875rem;
       line-height: 1.5; }
 
+.dashboard .edit {
+  background-color: #7486ae;
+  border: none;
+  color: white;
+  width: 100%;
+  margin: 0;
+  border-radius: 0; }
+
+.dashboard .details {
+  background-color: #2b655b;
+  border: none;
+  color: white;
+  aling-self: baseline;
+  width: 100%;
+  margin: 0;
+  border-radius: 0; }
+
+.dashboard .plant-container__detail {
+  background-color: #fff; }
+
+.dashboard .buttoncard {
+  display-flex: row;
+  border-radius: 0; }
+
+.dashboard .nopadding {
+  padding: 0; }
+
+.dashboard .plant-card {
+  padding: 0; }
+
+.dashboard .plant-info {
+  margin: 0; }
+
 .styleguide {
   margin: 5rem 0; }
   .styleguide .container {

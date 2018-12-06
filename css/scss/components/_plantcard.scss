@@ -1,0 +1,69 @@
+.dashboard {
+	
+
+.edit 
+	{
+    background-color: #7486ae; 
+    border: none;
+    color: white;
+    width:100%;
+    margin: 0;
+    border-radius:0;
+    
+}
+
+.details{
+	
+    background-color: #2b655b; 
+    border: none;
+    color: white;
+    aling-self: baseline;
+    width:100%;
+    margin:0;
+    border-radius:0;
+}
+
+
+
+.plant-container {
+	 
+
+}
+
+.plant-container__detail {
+	background-color: #fff;
+}
+
+
+
+.buttoncard {
+	display-flex: row;
+	border-radius:0;
+}
+
+.nopadding {
+	padding:0;
+}
+
+
+
+.plant-card {
+	padding: 0;
+}
+
+.plant-info {
+	margin: 0;
+}
+
+
+.column-small-12 column-large-4 {
+	
+
+
+@include breakpoint (large)
+
+}
+
+}
+
+
