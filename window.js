@@ -18,17 +18,28 @@ let mainWindow;
 
 function createWindow() {
     // Create the browser window.
-    mainWindow = new BrowserWindow({width: 1600, height: 900});
+    mainWindow = new BrowserWindow({
+        width     : 1600,
+        height    : 900,
+        center    : true,
+        title     : 'Seed Smart Garden',
+        icon      : path.join(__dirname, 'assets/icons/png/64x64.png'),
+        fullscreen: true,
+    });
 
     // and load the index.html of the app.
     mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'detail.html'),
+        pathname: path.join(__dirname, 'index.html'),
         protocol: 'file:',
-        slashes : true
+        slashes : true,
     }));
 
+    mainWindow.on('page-title-updated', function (e) {
+        e.preventDefault();
+    });
+
     // Open the DevTools.
-    mainWindow.webContents.openDevTools();
+    //mainWindow.webContents.openDevTools();
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function () {

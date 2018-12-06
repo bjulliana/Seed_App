@@ -1144,7 +1144,7 @@ input[type='button'] {
       .weather-card .weather-front .weather-info .temp-mobile span {
         font-size: 1.25rem;
         font-weight: 300;
-        margin: 0 0.3125rem; }
+        margin: 0 0.1875rem; }
         @media screen and (min-width: 600px) {
           .weather-card .weather-front .weather-info .temp span,
           .weather-card .weather-front .weather-info .temp-mobile span {
@@ -2062,7 +2062,8 @@ input[type='button'] {
     width: 100%;
     background-color: white;
     border: 1px solid #dadada;
-    padding: 0; }
+    padding: 0;
+    min-width: 10rem; }
     .header .nav-right .dropdown-usr .dropdown-menu > li {
       width: 100%;
       list-style: none;
